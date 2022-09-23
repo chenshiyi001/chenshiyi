@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer{
+      width: 300px;
+      height: 300px;
+      background-color: yellow;
+      overflow: auto;
+    }
+    .inner{
+      width: 200px;
+      height: 400px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+    <div class="outer">
+      <div class="inner">卡仕达卡接受到卡机收到货阿斯拉达哈酒卡仕达卡时间回调卡数据都会卡上的喀什很多坑哈师大</div>
+    </div>
+
+    <input type="checkbox" disabled/> 已阅读
+
+    <script>
+
+      var outer = document.querySelector(".outer")
+      outer.onscroll = function(){
+        console.log(this.scrollHeight,this.scrollTop,this.offsetHeight)
+        // this.scrollTop 在某些设备当中 有问题的 99.8782378
+        if(this.scrollHeight - (this.scrollTop + 2) <= this.offsetHeight){
+          console.log("到底部了")
+        }
+      }
+    </script>
+  
+</body>
+</html>

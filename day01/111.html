@@ -30,7 +30,7 @@
 
 <body>
     <div class="box1">
-        <div class="box2"></div>
+        <div class="box2">少时诵诗书所所所所所所所所所撒发付哇无付付多所付所大过多撒噶所过所多付过多噶</div>
     </div>
     <input type="checkbox" disabled>已阅读
     <script>
@@ -42,7 +42,7 @@
         console.log(box1.scrollHeight,box1.scrollTop,box1.offsetHeight)
         box1.onscroll = function () {
             console.log(box1.scrollHeight,box1.scrollTop,box1.offsetHeight)
-            if (this.scrollHeight - this.scrollTop + 1 <= this.offsetHeight) {
+            if (this.scrollHeight - (this.scrollTop + 1) <= this.offsetHeight) {
                     input.disabled=false
             }
         }

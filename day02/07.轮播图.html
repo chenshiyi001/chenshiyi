@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .banner {
+      width: 500px;
+      height: 300px;
+      background-color: aqua;
+      margin: 100px auto;
+      padding: 10px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner .conta div {
+      width: 500px;
+      height: 300px;
+      background-color: bisque;
+      text-align: center;
+      line-height: 300px;
+      font-size: 50px;
+      font-weight: bold;
+      float: left;
+    }
+
+    .conta {
+      width: 3000px;
+      height: 300px;
+      position: absolute;
+      left: 0;
+    }
+
+    .navList {
+      position: absolute;
+      bottom: 10px;
+      left: 150px;
+
+    }
+
+    .navList a {
+      display: block;
+      width: 25px;
+      height: 25px;
+      background-color: rgba(0, 0, 0, .6);
+      float: left;
+      margin: 0 10px;
+      border-radius: 50%;
+    }
+
+    .active {
+      background-color: red !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="banner">
+    <div class="conta">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>1</div>
+    </div>
+
+    <div class="navList">
+      <a href="" class="active"></a>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </div>
+  </div>
+  <script src="./tools.js"></script>
+  <script>
+    // 激活的下标
+    function activeBgc() {
+      if (index === 5) {
+        index = 0
+        conta.style.left = 0
+      }
+      for (var i = 0; i < aAll.length; i++) {
+        aAll[i].classList.remove("active")
+      }
+      console.log(index)
+      aAll[index].classList.add("active")
+    }
+    var aAll = document.querySelectorAll("a")
+    var conta = document.querySelector(".conta")
+    var index = 0
+    // 点击每一项切换图片
+    for (var i = 0; i < aAll.length; i++) {
+      aAll[i].index = i
+      aAll[i].onclick = function (e) {
+        clearInterval(interId)
+        index = this.index
+        // 点击了第几个
+        animat(conta, "left", index * -500, 30, function () {
+          activeBgc()
+          autoPlay()
+        })
+        e.preventDefault();
+      }
+    }
+    var interId = null;
+    /* 自动轮播 */
+    function autoPlay() {
+      interId = setInterval(function () {
+        index++
+        animat(conta, "left", index * -500, 30, function () {
+          activeBgc()
+        })
+
+      }, 2000)
+    }
+    autoPlay()
+
+
+
+
+
+  </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- <a href="#a">毛a</a>
+  <a href="#b">毛b</a> -->
+
+  <ul>
+    <li>iphone6</li>
+    <li>iphone7</li>
+    <li>iphone8</li>
+  </ul>
+
+
+
+  <script>
+
+    var list = document.querySelectorAll("li")
+    list.forEach(function(item){
+      item.onclick = function(){
+        // console.log(this.innerHTML)
+        // hash传参
+        // location.href = "./yd.html#"+this.innerHTML
+        // query传参
+        location.href = "./yd.html?name="+this.innerHTML+"&id=1001"
+      }
+    })
+
+
+    // var str = "?id=1001&name=张三&age=13"
+    // 将 "?id=1001&name=张三&age=13" 转换成迭代对象
+    // var us = new URLSearchParams(str)
+    // console.log(us.get("name"))
+
+
+
+
+    // BOM:BROWSER OBJECT MODULE  浏览器对象模型
+    // 浏览器提供给我们的一些接口api
+    // setTimeout()
+    // setInterval()
+
+    // 这个只做了解 浏览器相关信息
+    // console.log( window.navigator)
+
+    // 1.响应式框架  bootstrap
+    // 2.写一套是pc端  还有一套是移动端
+
+    // location.href = "http://www.baidu.com"
+    // 判断当前设备是移动端还是pc端
+    // var reg = /(phone|iPod|ios|iPad|Anhone|pad|pod|iPdroid|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+    // // console.log(reg.test(navigator.userAgent))
+    // if(reg.test(navigator.userAgent)){
+    //   // 跳转到移动端
+    //   location.href = "./yd.html"
+    // }else{
+    //   // 跳转到pc端
+    //   location.href = "./pc.html"
+    // }
+
+    // console.log(location)
+    // screen关于屏幕相关的内容
+    // window.onresize = function(){
+    //   console.log(screen.availWidth)
+    // }
+
+    // history   记录历史栈
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+</body>
+</html>

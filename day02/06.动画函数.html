@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #box1 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin-top: 10px;
+      position: absolute;
+    }
+
+    #box2 {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      margin-top: 150px;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <button id="btn1">box1向右移动</button>
+  <button id="btn2">box2向右移动</button>
+  <div id="box1"></div>
+  <div id="box2"></div>
+
+
+  <div style="height:800px;position: absolute;left: 1000px;border-left: 1px solid black;"></div>
+
+  <script>
+    var btn1 = document.getElementById('btn1')
+    var box1 = document.getElementById('box1')
+
+
+
+    btn1.onclick = function () {
+      animat(box1, 'left', 1000, 20, function () {
+        animat(box1, 'left', 0, 20, function () {
+          animat(box1, 'width', 400, 20, function () {
+            animat(box1, 'height', 400, 20, function () {
+
+            })
+          })
+        })
+      })
+    }
+    var btn2 = document.getElementById('btn2')
+    var box2 = document.getElementById('box2')
+    btn2.onclick = function () {
+      animat(box2, 'left', 1000, 20)
+      // clearInterval(interId)
+      // interId = setInterval(function () {
+      //   // 先获取到元素本身的位置
+      //   var oldValue = parseInt(getComputedStyle(box1).left)
+      //   // 得到一个新的位置
+      //   var newValue = oldValue - 19
+      //   // 判断当值大于等于目标位置设置值为目标位置
+      //   if (newValue < 0) {
+      //     newValue = 0
+      //   }
+      //   // 设置元素的最新位置
+      //   box1.style.left = newValue + "px"
+      //   // 判断当元素位置达到目标位置以后关闭定时器
+      //   if (newValue === 0) {
+      //     clearInterval(interId)
+      //   }
+      // }, 20)
+    }
+    // 封装函数
+    /* 
+      el:需要执行动画的函数
+      attr:需要动画的属性
+      target:目标位置
+      speed：移动速度
+      callback：动画结束的回调函数
+    */
+    function animat(el, attr, target, speed, callback) {
+      clearInterval(el.interId)
+      var currentValue = parseInt(getComputedStyle(el)[attr])
+      if (currentValue > target) {
+        speed = -speed
+      }
+      el.interId = setInterval(function () {
+        // 先获取到元素本身的位置
+        var oldValue = parseInt(getComputedStyle(el)[attr])
+        // 得到一个新的位置
+        var newValue = oldValue + speed
+        // 判断当值大于等于目标位置设置值为目标位置
+        if (newValue > target && speed > 0 || newValue < target && speed < 0) {
+          newValue = target
+        }
+        // 设置元素的最新位置
+        el.style[attr] = newValue + "px"
+        // 判断当元素位置达到目标位置以后关闭定时器
+        if (newValue === target) {
+          clearInterval(el.interId)
+
+          callback && callback()
+        }
+      }, 20)
+    }
+
+    // var a = 10
+    // var o = {}   1012
+    // 引用数据类型值是什么? 引用地址
+    // function fun(){}
+    // console.log(!!o)
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+</body>
+
+</html>
