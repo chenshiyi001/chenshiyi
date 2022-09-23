@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      border: 20px solid black;
+      padding: 20px;
+      /* ie不支持这个属性 css3新增 */
+      /* 怪异盒模型和标准盒模型之间的转换 */
+      /* border-box :将标准转换成怪异   */
+      /* content-box:将怪异转换成标准   */
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    完整的盒模型包含什么东西：
+    
+      怪异盒模型：ie盒模型  width+margin
+      标准盒模型：正常盒模型   width + height+ border + padding +margin
+   -->
+  <div id="box"></div>
+
+  <script>
+    // 获取到元素的可见宽度
+    var box = document.getElementById('box')
+
+    console.log(box.offsetWidth)
+
+  </script>
+
+
+</body>
+
+</html>

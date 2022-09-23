@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box1 {
+        width: 400px;
+        height: 400px;
+        background-color: aqua;
+        overflow: scroll;
+
+    }
+
+    .box2 {
+        width: 200px;
+        height: 800px;
+        background-color: brown;
+    }
+</style>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <input type="checkbox" disabled>已阅读
+    <script>
+        var box1 = document.querySelector(".box1")
+
+        var button = document.querySelector("button")
+
+        var input=document.querySelector("input")
+        console.log(box1.scrollHeight,box1.scrollTop,box1.offsetHeight)
+        box1.onscroll = function () {
+            console.log(box1.scrollHeight,box1.scrollTop,box1.offsetHeight)
+            if (this.scrollHeight - this.scrollTop + 1 <= this.offsetHeight) {
+                    input.disabled=false
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <style>
+    .pro{
+      width: 400px;
+      height: 10px;
+      box-shadow: 0 0 3px rgba(100, 100, 100, .4);
+      margin: 100px auto;
+    }
+    .inner{
+      width: 0;
+      height: 100%;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+    语义化标签：
+      搜索引擎爬虫
+      利于程序观察
+  -->
+  <!-- 头部 -->
+  <header>
+    <!-- 导航 -->
+    <nav></nav>
+  </header> 
+  <!-- 主体 -->
+  <main>
+    <!-- 侧边 -->
+    <aside></aside>
+    <!-- 文章 -->
+    <article>
+      <!-- 块  div -->
+      <section></section>
+    </article>
+  </main>
+  <!-- 脚步 -->
+  <footer></footer>
+
+
+  <!-- <progress value="20" max="200"></progress> -->
+
+  <!-- 自定义进度条 -->
+
+  <div class="pro">
+    <div class="inner"></div>
+  </div>
+
+  <button class="start">开始</button>
+  <button class="stop">暂停</button>
+  <script>
+    var start = document.querySelector(".start")
+    var stop = document.querySelector(".stop")
+    var inner = document.querySelector(".inner")
+    var currentWidth = 0
+    var speed = 150
+    var interId = null
+    var proWidth = document.querySelector(".pro").offsetWidth
+    start.onclick = function(){
+      interId = setInterval(function(){
+        currentWidth += speed
+        if(currentWidth >= proWidth){
+          currentWidth = proWidth
+          clearInterval(interId)
+        }
+        inner.style.width = currentWidth + "px"
+        
+      },1000)
+    }
+    // stop.onclick = function(){}
+    
+  </script>
+  
+
+</body>
+</html>

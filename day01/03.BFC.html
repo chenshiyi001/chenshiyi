@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      margin-bottom: 50px;
+    }
+
+    .box2 {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      margin-top: 50px;
+    }
+
+    .con {
+      /* 开启bfc */
+      /* overflow: hidden; */
+    }
+    .outer{
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      /* border: 5px solid blue; */
+      /* overflow: hidden; */
+      /* position: absolute; */
+      /* display: inline-block; */
+      overflow-wrap: break-word;
+    }
+    .inner{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      float: left;
+    }
+    h1{
+      background-color: greenyellow;
+      margin-top: 100px;
+    }
+    /* .clear::after{
+      content: "";
+      display: block;
+      clear: both;
+    } */
+    /* .abc{
+      width: 0;
+      height: 0;
+      background-color:green;
+      clear: both;
+    } */
+    /* .outer::after{
+      content: "";
+      display: block;
+      clear: both;
+    } */
+    
+   
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    BFC:block formatting context(格式化块级上下文)
+      如果某个元素开启bfc页面在渲染的独立的一个区域
+
+      元素的上下外边距会重叠
+   -->
+   
+   <div class="outer clear">
+      大家好啊我是刘德华我是一个歌手哈哈哈哈哈哈哈哈
+      abccbanbambaaskjdhkajshdkasjhdkjashkjdashdakjshdkajshdjkashdjkasd
+      <!-- <div class="inner"></div> -->
+      <!-- <div class="abc"></div> -->
+   </div>
+
+  <!-- <div class="con">
+    <div class="box1"></div>
+  </div>
+
+  <div class="con">
+    <div class="box2"></div>
+  </div> -->
+
+
+
+</body>
+
+</html>

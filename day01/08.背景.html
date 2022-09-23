@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html{
+      /* 滤镜 */
+      filter: grayscale(100%);
+    }
+    body{
+      background-color: yellow;
+      /* filter: saturate(100%); */
+      /* filter: sepia(100%); */
+    }
+    .box {
+      width: 400px;
+      height: 400px;
+      border: 20px dashed black;
+      padding: 20px;
+      background-color: pink;
+      /* 背景的裁剪 */
+      /* content-box 背景从内容区域开始 
+        padding-box：内边距位置开始
+        border-box：边框开始
+      */
+      background-clip: border-box;
+
+      background-image: url('https://t7.baidu.com/it/u=2975860541,3114705737&fm=217&app=125&size=f242,162&n=0&g=0n&f=JPEG?s=DFA22CC55C42B0C80C259802030060D1&sec=1663917245&t=1eb2f3e5b15f88a6bf930e292bf2b82b');
+      background-repeat: no-repeat;
+
+      /* 背景图片起始位置
+          content-box：从内容区域开始
+      */
+      background-origin: border-box;
+    } 
+  </style>
+</head>
+
+<body>
+
+  <div class="box">12312</div>
+  <h1>我是标题</h1>
+
+
+</body>
+
+</html>

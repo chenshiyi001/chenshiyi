@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./animate4.css">
+  <style>
+    /* https://animate.style/ */
+
+    li{
+      background-color: greenyellow;
+      margin: 20px 0;
+      /* 动画的名字 */
+      /* animation-name:move;
+      animation-duration: 1s; */
+    
+    }
+    /* 定义动画帧 */
+    /* @keyframes move{
+      from{
+        transform: translateY(-1000px) scale(0.3);
+      }
+      to{
+        transform: translateY(0) scale(1);
+      }
+    } */
+
+    /* div{
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      animation-name:move;
+      animation-duration: 1s;
+    } */
+
+
+  </style>
+
+</head>
+<body>
+
+  <div></div>
+
+  <input type="text" id="username"/>
+  <button id="add">添加</button>
+
+  <ul id="uu">
+    <li>张三</li>
+    <li>李四</li>
+    <li>王五</li>
+  </ul>
+
+  <script>
+    var username = document.getElementById('username')
+    var addBtn = document.getElementById('add')
+    var uu = document.getElementById('uu')
+    addBtn.addEventListener("click",function(){
+      // animated bounceInRight
+      var liDom = document.createElement("li")
+      liDom.classList.add('animate__animated')
+      liDom.classList.add('animate__bounceInDown')
+      // 创建文本节点
+      var userNameNode = document.createTextNode(username.value)
+      // 组装
+      liDom.appendChild(userNameNode)
+      uu.appendChild(liDom)
+      username.value = ""
+    })
+
+    // 可以监听动画结束的事件
+    uu.addEventListener("click",function(e){
+      if(e.target.nodeName === "LI"){
+        e.target.classList.add('animate__animated')
+        e.target.classList.add('animate__bounceOutRight')
+        e.target.addEventListener("animationend",function(){
+          this.remove()
+        })
+        // setTimeout(function(){
+        //   // 动画结束以后才执行
+        //   e.target.remove()
+        // },1000)
+      }
+    })
+
+
+  </script>
+
+
+
+
+  
+</body>
+</html>
