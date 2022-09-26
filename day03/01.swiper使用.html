@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./swiper/swiper-bundle.css">
+  <style>
+    .swiper {
+      width: 500px;
+      height: 300px;
+      background-color: greenyellow;
+      margin: 50px auto;
+      padding: 10px 0;
+    }
+
+    .swiper .swiper-wrapper div.swiper-slide1 {
+      background-color: rebeccapurple;
+    }
+
+    .swiper .swiper-wrapper div.swiper-slide2 {
+      background-color: blanchedalmond;
+    }
+
+    .swiper .swiper-wrapper div.swiper-slide3 {
+      background-color: gold;
+    }
+
+    .swiper .swiper-wrapper div {
+      text-align: center;
+      line-height: 300px;
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: brown;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide swiper-slide1">Slide 1</div>
+      <div class="swiper-slide swiper-slide2">Slide 2</div>
+      <div class="swiper-slide swiper-slide3">Slide 3</div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+    <!-- 如果需要导航按钮 -->
+    <!-- <div class="swiper-button-prev"></div> -->
+    <!-- <div class="swiper-button-next"></div> -->
+
+  </div>
+
+  <script src="./swiper/swiper-bundle.js"></script>
+  <script>
+    // 初始化轮播图
+    new Swiper(".swiper", {
+      effect: "cube",
+      loop:true,
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    })
+  </script>
+</body>
+
+</html>

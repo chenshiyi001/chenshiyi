@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <!-- 浏览器自带的控制器在每个浏览器都是不一样  需要自己定义一个播放器 -->
+  <video src="./fun.mp4" controls ></video>
+  <button>test按钮</button>
+
+
+
+  <script>
+    var btn = document.querySelector("button")
+    var video = document.querySelector("video")
+    // 监听视频的播放事件
+    video.ontimeupdate = function(){
+      // console.log("视频在播放中")
+      // 获取视频的当前播放时长
+      console.log(this.currentTime)
+    }
+    // 监听视频播放结束以后的时间
+    video.onended = function(){
+      console.log("播放结束")
+    }
+    btn.onclick = function(){
+
+      // 视频全屏
+      // video.requestFullscreen()
+      // 视频播放
+      // video.play()
+      // 视频停止
+      // video.pause()
+      // 获取视频的总时长
+      // console.log(video.duration)
+      // 控制视频播放的静音
+      // video.muted = true
+    }
+
+
+    
+
+
+
+  </script>
+  
+
+
+
+
+
+
+
+  
+</body>
+</html>

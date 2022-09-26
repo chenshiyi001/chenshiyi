@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.w {
+  width: 680px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(100, 100, 100, .8);
+  margin: 50px auto;
+  position: relative;
+  background-color: #000;
+}
+.w > span{
+  display: block;
+  color: #fff;
+  text-align: center;
+  line-height: 300px;
+}
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.c {
+  width: 100%;
+  height: 50px;
+  background-color:rgba(100, 100, 100, 0.5);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  z-index: 9;
+}
+
+.c .left {
+  flex: 1;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c .iconfont{
+  font-size: 35px;
+  color: #fff;
+}
+.time{
+  color: #fff;
+}
+
+.c .center {
+  flex: 7;
+  display: flex;
+  align-items: center;
+}
+
+.c .right {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.pro{
+  width: 450px;
+  height: 5px;
+  background-color: #aaa;
+  border-radius: 4px;
+}
+.curPro{
+  width:0;
+  height: 100%;
+  background-color:red;
+  border-radius: 4px;
+}
