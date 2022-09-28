@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border: 2px solid;
+      border-radius: 50%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    .file {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="avatar">
+    <img src="" alt="">
+  </div>
+
+  <button>选择图片上传</button>
+  <input type="file" class="file" />
+  <script>
+    var file = document.querySelector(".file")
+    document.querySelector("button").onclick = function () {
+      file.click()
+    }
+
+    file.onchange = function(){
+      console.log(this.files[0])
+      // 读取文件
+      var fr = new FileReader()
+      fr.readAsDataURL(this.files[0])
+      fr.onload = function(){
+        // 获取到一种数据格式base64的
+        document.querySelector("img").src = fr.result
+        console.log(fr.result)
+      }
+    }
+  </script>
+
+</body>
+
+</html>

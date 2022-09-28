@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #dplayer{
+      width: 800px;
+      height: 400px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- https://juejin.cn/post/6975140802208989221 -->
+
+  <div id="dplayer"></div>
+
+  <script src="./DPlayer.min.js"></script>
+  <script>
+    var options = {
+      container:document.getElementById('dplayer'),
+      video:{
+        quality:[
+          {
+            name:'480p',
+            url: './火线反击.Safe.2012.BluRay.1080p.DTS.x264.mkv',
+            type: 'normal'
+          },
+          {
+            name:'720p',
+            url: './fun.mp4',
+            type: 'normal',
+          },
+        ],
+        defaultQuality: 0,
+        pic: 'https://img2.baidu.com/it/u=1128216298,2207674418&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1664384400&t=d20b196f55cdced56a7e854896527485',
+        thumbnails: 'https://img2.baidu.com/it/u=1128216298,2207674418&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1664384400&t=d20b196f55cdced56a7e854896527485',
+        // url:'./火线反击.Safe.2012.BluRay.1080p.DTS.x264.mkv'
+      },
+    
+    }
+    new DPlayer(options);
+  </script>
+</body>
+</html>

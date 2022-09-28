@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1></h1>
+
+  <input type="file" multiple/>
+  <script>
+    // 文件被选中了
+    var file = document.querySelector("input")
+    file.onchange = function(){
+      // 这里读取文件
+      // 1.获取文件对象
+      var fileObj = this.files[0]
+      // 2.创建一个读取文件的对象
+      var fr = new FileReader()
+      // 3.告诉fr读取哪个对象  读取文件的时候需要时间
+      fr.readAsText(fileObj)
+      // 4.读取文件的内容   监听文件读取完成了
+      fr.onload = function(){
+        console.log(fr.result)
+        document.querySelector("h1").innerHTML = fr.result
+      }
+      
+
+
+      // console.log(fr)
+      // console.log(fr.result)
+
+      // setTimeout(function(){
+      //   console.log(fr.result)
+      // },200)
+
+    }
+
+
+
+   
+  </script>
+  
+</body>
+</html>

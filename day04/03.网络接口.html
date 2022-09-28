@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 网络重新连接
+    window.ononline = function () {
+      console.log("开启连接")
+    }
+    // 断网会执行这个事件
+    window.onoffline = function () {
+      console.log('关闭连接')
+    }
+  </script>
+
+</body>
+
+</html>

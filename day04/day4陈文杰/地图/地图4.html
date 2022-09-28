@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>掩模-只展示地图指定区域</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <style>
+        body,
+        html,
+        #container {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+
+        .info {
+            z-index: 999;
+            width: auto;
+            min-width: 22rem;
+            padding: .75rem 1.25rem;
+            margin-left: 1.25rem;
+            position: fixed;
+            top: 1rem;
+            background-color: #fff;
+            border-radius: .25rem;
+            font-size: 14px;
+            color: #666;
+            box-shadow: 0 2px 6px 0 rgba(27, 142, 236, 0.5);
+        }
+        .drawing-panel {
+            z-index: 999;
+            position: fixed;
+            bottom: 3.5rem;
+            margin-left: 3rem;
+            padding: 1rem 1rem;
+            border-radius: .25rem;
+            background-color: #fff;
+            box-shadow: 0 2px 6px 0 rgba(27, 142, 236, 0.5);
+        }
+        .draw-btn {
+            width: 75px;
+            height: 30px;
+            background-color: #fff;
+            color: rgba(27, 142, 236, 1);
+            border:1px solid rgba(27, 142, 236, 1);
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+    </style>
+    <script src="https://bj.bcebos.com/v1/mapopen/cms/bmapgldemo/custom/customgreen.js"></script>
+    <script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=iEqEH1654ZQtAR7Tu52yHB3KXuGpLGAc"></script>
+</head>
+
+<body>
+    <ul class = "drawing-panel">
+        <input type="button" class="draw-btn" value="开启测距" onclick="myDis.open()">
+        <input type="button" class="draw-btn" value="关闭测距" onclick="myDis.close()">
+    </ul>
+    <div id="container"></div>
+</body>
+
+</html>
+<script type="text/javascript" src="https://mapopen.cdn.bcebos.com/github/BMapGLLib/DistanceTool/src/DistanceTool.min.js"></script>
+<script>
+    var map = new BMapGL.Map('container', {
+        backgroundColor: [192, 214, 213, 100],
+        enableMapClick:false
+    });
+    var testPt = new BMapGL.Point(113.90, 22.57);
+    map.centerAndZoom(testPt, 12);
+    map.enableScrollWheelZoom();
+    map.setMapStyleV2({
+        styleJson: StyleJson3
+    });
+
+    var bdary = new BMapGL.Boundary();
+    bdary.get('宝安区', function (rs) {
+        // 绘制行政区
+        for (var i = 0; i < rs.boundaries.length; i++) {
+            var path = [];
+            var xyArr = rs.boundaries[i].split(';');
+            var ptArr = [];
+            for (var j = 0; j < xyArr.length; j++) {
+                var tmp = xyArr[j].split(',');
+                var pt = new BMapGL.Point(tmp[0], tmp[1]);
+                ptArr.push(pt);
+            }
+            var mapmask = new BMapGL.MapMask(ptArr, {
+                isBuildingMask: true,
+                isPoiMask: true,
+                isMapMask: true,
+                showRegion: 'inside',
+                topFillColor: '#5679ea',
+                topFillOpacity: 0.5,
+                sideFillColor: '#5679ea',
+                sideFillOpacity: 0.9
+            });
+            map.addOverlay(mapmask);
+            var border = new BMapGL.Polyline(ptArr, {
+                strokeColor: '#4ca7a2',
+                strokeWeight: 3,
+                strokeOpacity: 1
+            });
+            map.addOverlay(border);
+        }
+    });
+    var x = 113.91599257128907
+    var y = 22.6013719798585
+    var point = new BMapGL.Point(x, y);
+    var marker = new BMapGL.Marker(point);
+    map.addOverlay(marker);
+    var opts = {
+        width: 200,     // 信息窗口宽度
+        height: 100,     // 信息窗口高度
+        title: "腾讯大厦", // 信息窗口标题
+        message: "这里是腾讯大厦"
+    }
+    var infoWindow = new BMapGL.InfoWindow("地址：深圳市南山区高新科技园北区，深南大道北侧", opts);  // 创建信息窗口对象 
+    marker.addEventListener("click", function () {
+        map.openInfoWindow(infoWindow, point); //开启信息窗口
+    });
+    var a = 113.894844
+    var b = 22.557627
+    var Point1 = new BMapGL.Point(a, b);
+    var marker2 = new BMapGL.Marker(Point1);
+    map.addOverlay(marker2); // 将标注添加到地图中
+    var opts1 = {
+        width: 200,     // 信息窗口宽度
+        height: 100,     // 信息窗口高度
+        title: "金宝商务大厦", // 信息窗口标题
+        message: "我在这"
+    }
+    var infoWindow1 = new BMapGL.InfoWindow("地址：深圳市宝安区顺丰路15号", opts1);  // 创建信息窗口对象 
+    marker2.addEventListener("click", function () {
+        map.openInfoWindow(infoWindow1, Point1); //开启信息窗口
+    });
+
+
+
+   
+    map.centerAndZoom(testPt, 12);      // 初始化地图,设置中心点坐标和地图级别
+    
+    var myDis = new BMapGLLib.DistanceTool(map);
+
+    // 监听测距过程中的鼠标事件
+    myDis.addEventListener('drawend', function(e) {
+        console.log("drawend");
+        console.log(e.points);
+        console.log(e.overlays);
+	    console.log(e.distance);
+    });
+    myDis.addEventListener("addpoint", function(e) {
+        console.log("addpoint");
+        console.log(e.point);
+        console.log(e.pixel);
+        console.log(e.index);
+        console.log(e.distance);
+    });
+    myDis.addEventListener("removepolyline", function(e) {
+        console.log("removepolyline");
+        console.log(e);
+    });
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 获取当前的位置信息
+    navigator.geolocation.getCurrentPosition(function(p){
+      // 获取当前的经纬度
+      console.log(p.coords.latitude)
+      console.log(p.coords.longitude)
+      // 没法找
+    })
+
+  </script>
+
+
+
+
+
+  
+</body>
+</html>
