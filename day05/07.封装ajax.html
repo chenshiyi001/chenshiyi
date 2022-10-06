@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // var o = {
+    //   name:'zhangsan',
+    //   age:13
+    // }
+    // var str = ''
+    // for(var key in o){
+    //   console.log(key,o[key])
+    //   str +='&'+ key+"="+o[key]
+    // }
+    // console.log(str.slice(1))
+
+
+
+
+    // 'name=zhangsan&age13'
+
+
+
+    function ajax(options){
+      var method = options.method || 'get'
+      var url = options.url
+      var params = options.params || {}
+      var formatParams = ''
+      var callback = options.success
+      // 准备参数
+      for(var key in params){
+        formatParams +='&'+ key+"="+params[key]
+      } 
+      formatParams = formatParams.slice(1)
+      var xhr = new XMLHttpRequest()
+
+      if(method.toLowerCase() === "get"){
+        xhr.open(method,url+"?"+formatParams)
+        xhr.send(null)
+      }else if(method.toLowerCase() === "post"){
+        xhr.open(method,url)
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+        xhr.send(formatParams)
+      }
+
+      // 接收
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+          callback(JSON.parse(xhr.responseText))
+        }
+      }
+
+    }
+
+    ajax({
+      url:'http://192.168.0.8:8360/api/v4/product/pagination',
+      params:{page:1,size:10},
+      success: function(data) {
+        console.log(data)
+        // console.log(JSON.parse(data))
+      }
+    })
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <label>
+    城市:
+    <input type="text" id="city" />
+  </label>
+
+  <button>查看天气</button>
+  <ul>
+   
+  </ul>
+  <script>
+    // readyState xhr的状态
+    // 0-4
+    /* 1.创建一个请求对象 浏览器 */
+    /* 
+    * xhr.readyState  0:对象未初始化
+    * xhr.readyState  1:对象初始化完成了
+    * xhr.readyState  2:服务器开始接收数据
+    * xhr.readyState  3:服务器已经收到了请求开始处理  并且开始返回数据  但是数据是不完整
+    * xhr.readyState  4:服务器处理完成了  并且返回给你一些数据了
+  */
+
+    // http协议状态码
+    //    27.http常见状态码
+    //     200成功
+    //     301永久重定向，比如我们网站的某个页面彻底搬家，就是换了路径，那么当前端访问这个老路径的时候，后端可以设置   //     301永久重定向到新路径
+    //     302临时重定向（请求资源暂时在其它url下）
+    //     304返回浏览器缓存，比如你第一次访问baidu首页，是200，第二次访问如果baidu首页没有任何变化那么就会返回304   //     让用户直接读取浏览器缓存，这样性能更好
+    //     401验证失败，需要登录
+    //     403拒绝访问
+    //     404找不到资源，比如找不到页面，找不到图片，找不到接口地址等等
+    //     500服务器错误
+    //     504网关(代理服务器)超时
+
+    /* 
+      ajax:
+        asynchronization javascript and xml
+
+        xml:是一种数据格式
+    */
+
+    //  p = {
+    //   name:'张三'，
+    //   age：13
+    //  }
+    // xml数据格式
+    // <person>
+    //   <name>张三</name>  
+    //   <age>13</age>
+    // </person>
+    /* 
+      向后端请求数据需要哪些东西?
+    */
+    var city = document.querySelector("#city")
+
+    var uu = document.querySelector("ul")
+
+    document.querySelector("button").onclick = function () {
+      uu.innerHTML = ""
+      // 根据城市搜索天气信息
+      /* 
+        后端给我们 接口文档
+        1.文档类型  2.口头描述  3.微信发给你....
+          服务器接口地址
+          提交的方式
+          参数
+      */
+      // 1.找一个帮手
+      var xhr = new XMLHttpRequest()
+      // 2.告诉该对象区哪里请求数据并且以什么样的方式请求
+      // 3.告诉它请求的参数  如果是get请求  这里处理了跨域  后端
+      xhr.open('get', 'https://v0.yiketianqi.com/api?unescape=1&version=v91&appid=43656176&appsecret=I42og6Lm&ext=&cityid=&city=' + city.value)
+      // 4.发送请求
+      xhr.send(null)
+      // 5.接收数据
+      // console.log(xhr.responseText)
+      // 监听xhr.readyState的一个变化
+      xhr.onreadystatechange = function () {
+        // console.log(xhr.readyState)
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var result = JSON.parse(xhr.responseText)
+          result.data.forEach(function(item){
+            uu.insertAdjacentHTML("beforeend","<li>"+item.date+" "+item.wea+" 最高温度："+item.tem1+"度，最低"+item.tem2+"度</li>")
+          })  
+        }
+      }
+    }
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label>
+    用户名:<input type="text" id="username"/>
+  </label>
+
+  <label>
+    密码:<input type="text" id="password"/>
+  </label>
+
+
+  <button>登录</button>
+
+
+  <script>
+    // 降低浏览器的安全等级
+    // -disable-web-security --user-data-dir=C:\MyChromeDevUserData  
+    var username = document.getElementById('username')
+    var pwd = document.getElementById('password')
+    document.querySelector("button").onclick = function(){
+      // http://192.168.0.8:8360/api/v4/user/signin
+      var xhr = new XMLHttpRequest()
+      xhr.open("post",'http://192.168.0.8:8360/api/v4/user/signin')
+      // 设置请求头
+      xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+      xhr.send('name='+username.value+'&password='+pwd.value)
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+          // console.log(xhr.responseText)
+          console.log(JSON.parse(xhr.responseText))
+        }
+      }
+
+      
+
+    }
+
+  </script>
+  
+</body>
+</html>
