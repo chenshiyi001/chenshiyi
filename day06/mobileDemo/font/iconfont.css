@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1664432752102') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fanhui:before {
+  content: "\f0292";
+}
+
+.icon-02:before {
+  content: "\e602";
+}
+
+.icon-c-cstar-o:before {
+  content: "\e69f";
+}
+
+.icon-upgrade:before {
+  content: "\e731";
+}
+
+.icon-search:before {
+  content: "\e8ef";
+}
+
+.icon-contact:before {
+  content: "\e54f";
+}
+
+.icon-location-o:before {
+  content: "\e558";
+}
+
+.icon-description:before {
+  content: "\e649";
+}
+
+.icon-logistics:before {
+  content: "\e64f";
+}
+
+.icon-tosend:before {
+  content: "\e657";
+}
+
+.icon-records:before {
+  content: "\e658";
+}
+
+.icon-maijiagouwuche:before {
+  content: "\e992";
+}
+
+.icon-pending-payment:before {
+  content: "\e6ad";
+}
+
+.icon-setting-o:before {
+  content: "\e6b2";
+}
+

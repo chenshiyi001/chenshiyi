@@ -1,0 +1,116 @@
+header{
+  height: 46px;
+  display: flex;
+  box-shadow: 0 0 3px rgba(100, 100, 100, .8);
+}
+
+header div:nth-of-type(1),header div:nth-of-type(3){
+  width: 20%;
+  height: 100%;
+}
+header div:nth-of-type(2){
+  flex: 1;
+}
+header div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header div .iconfont{
+  font-size: 20px;
+}
+
+footer{
+  height: 50px;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 0 3px rgba(100, 100, 100, .8);
+  background-color: #fff;
+}
+footer div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  
+  
+}
+footer div .iconfont{
+  font-size: 24px;
+}
+footer div span{
+  font-size: 14px;
+}
+footer .active{
+  color: rgb(25, 137, 250);
+}
+
+main{
+  height: calc(100vh - 96px);
+  /* overflow: scroll; */
+  overflow: hidden;
+}
+
+main .content{
+  padding: 0 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .item{
+  width: 49%;
+  box-shadow: 0 0 2px rgba(100, 100, 100, .8);
+  border-radius: 4px;
+  margin-top:10px ;
+  padding: 4px;
+  box-sizing: border-box;
+
+}
+main .item img{
+  width: 100%;
+}
+main .item h3{
+  font-size: 14px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+}
+main .item  span{
+  font-size: 13px;
+  color: #f50;
+}
+
+.noData{
+  width: 120px;
+  height: 30px;
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 4px;
+  display: none;
+}
+
+.backTop{
+  display: block;
+}
+
+.backTop i{
+  position: fixed;
+  right: 20px;
+  bottom: 70px;
+  font-size: 40px;
+  color: #bbb;
+}
