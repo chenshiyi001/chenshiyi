@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    /* 不同的构造函数之间可能有相同的属性和方法 把相同的部分提取出去，然后需要用的时候继承 */
+
+    /* 提取共有的东西 */
+    function Person(name,age,gender){
+      this.name = name
+      this.age = age
+      this.gender = gender
+    }
+    Person.prototype.eat = function(){
+      console.log("我是人，我要吃东西")
+    }
+
+
+    /* 领导对象 */
+    function Leader(name,age,gender,salary){
+      // 调用父构造函数的call方法来实习属性继承
+      Person.call(this,name,age,gender) 
+      this.salary = salary
+    }
+    
+    // Leader.prototype.eat = function(){
+    //   console.log("我是人，我要吃东西")
+    // }
+    
+    /* 子类的原型继承 父类构造函数的实例对象 就能继承方法 */
+    // var p1 = new Person()
+    Leader.prototype = new Person()
+    Leader.prototype.constructor = Leader
+ 
+    // 添加领导的方法
+    Leader.prototype.order = function(){
+      console.log("我是领导，我会给员工下命令")
+    }
+    var l1 = new Leader('张三',13,'男',3000)
+    l1.eat()
+
+    l1.order()
+    console.log(Leader.prototype.constructor)
+    // console.log(l1)
+
+
+
+
+
+
+
+
+
+
+
+    // console.log(l1)
+    // l1.order()
+    // l1.eat()
+    /* 员工构造函数 */
+    // function Staff(name,age,gender,job){
+    //   Person.call(this,name,age,gender)
+    //   this.job = job
+    // }
+    // Staff.prototype.coding = function(){
+    //   console.log("我是员工,我会敲代码")
+    // }
+    // Staff.prototype.eat = function(){
+    //   console.log("我是人，我要吃东西")
+    // }
+    // var s1 = new Staff('李四',14,'男','前端开发工程师')
+
+    // console.log(s1)
+
+    // s1.coding()
+    // s1.eat()
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+  
+</body>
+</html>
