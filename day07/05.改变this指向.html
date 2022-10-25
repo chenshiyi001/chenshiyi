@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    var o1 = {
+      name: 'Lisi'
+    }
+    var o = {
+      name: '张三',
+      sayHi: function (a, b) {
+        console.log('我是sayHi方法', this, a, b)
+      }
+    }
+
+    /* 
+      改变this指向的方案
+        call:当函数调用call方法的时候会立马执行,call中第一个参数是需要改变this指向的对象,后面的参数就是函数的实参
+        apply:当函数调用apply方法的时候会立马执行,apply中第一个参数是需要改变this指向的对象，传参形式以数组的形式传递
+        bind：当调用bind方法不会立马执行该函数,会返回一个和原本一样的函数,需要调用返回的函数,传参形式和call一样
+    */
+
+
+    // o.sayHi.bind(o1)(10, 20)
+    // console.log(o.sayHi === fn)
+
+
+
+    // o.sayHi.apply(o1,[10,20])
+
+    // o.sayHi.call(o1,10,20)
+
+
+    // o.sayHi()
+
+
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>

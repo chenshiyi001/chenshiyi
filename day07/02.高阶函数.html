@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+      高阶函数:函数的返回值是一个函数  或者说参数是一个函数 那就叫高阶函数
+    */
+
+    // function fun(fn) {
+    //   fn()
+    // }
+    // fun(function () {
+    //   console.log("我是参数的函数")
+    // })
+
+
+      // function fun(){
+      //   return function(){
+      //     console.log("我是fun的返回函数")
+      //   }
+      // }
+      // var fn = fun()
+      // fn()
+
+
+
+      var obj = {
+        name:'占山',
+        age:13,
+        gender:'男',
+        forEach:function(callback){
+          for(var key in this){
+            if(key === "forEach"){
+              continue;
+            }
+            callback(key,this[key],this)
+          }
+        },
+        addr:'深圳'
+      }
+
+      obj.forEach(function(key,value,obj){
+        console.log(key,value,obj)
+      })
+
+
+
+      // forEach
+      // some
+      // map
+      // filter
+      // every
+      // reduce
+      // find
+      // findIndex
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

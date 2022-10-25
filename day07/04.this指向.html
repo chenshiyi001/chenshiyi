@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button>按钮</button>
+
+
+  <script>
+    document.querySelector("button").onclick = function () {
+      // var that = this
+      setTimeout((function () {
+        this.style.backgroundColor = "red"
+      }).bind(this), 2000)
+    }
+    // console.log(this) //window 在模块化
+    // function fun(){
+    //   console.log(this) //window
+    // }
+    // fun()
+
+    /* 谁调用就是谁 */
+    // var o = {
+    //   name:'张三',
+    //   fn:function(){
+    //     // console.log(this) // o
+    //     return function(){
+    //       console.log(this)
+    //     }
+    //   }
+    // }
+    // o.fn()()
+
+    // var f1 = o.fn
+    // // f1()
+    // var b = {
+    //   name:'李四',
+    //   fn:f1
+    // }
+    // b.fn()
+
+    // var b = {
+    //   name:'李四',
+    //   fn:o.fn
+    // }
+
+    // b.fn()
+    // o.fn()
+
+
+
+    // var arr = [1,2,3,4]
+    // arr.forEach(function(){
+    //   console.log(this)
+    // })
+
+      // setTimeout(function(){
+      //   console.log(this) //window
+      // })
+
+
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>

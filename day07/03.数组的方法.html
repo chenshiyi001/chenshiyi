@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <script>
+
+    var a = {}
+
+    var arr = [
+      {name:'张三',age:13,gender:'男'},
+      {name:'李四',age:14,gender:'男'},
+      {name:'王五',age:15,gender:'男'},
+    ]
+
+    // var arr = [1,2,3,4]
+    /* forEach不会改变原数组 */
+    arr.forEach(function(item){
+      item.age+=20
+      // item += 10
+    })
+    console.log(arr)
+
+    // var o = {}
+    // /* 
+    //   第一个参数 就是回调函数
+    //   第二个参数 改变前面函数内部this指向的内容
+    // */
+    // arr.forEach(function(){
+    //   console.log(this)
+    // },o)
+
+  </script>
+  
+</body>
+</html>

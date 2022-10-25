@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // go:{
+
+    // }
+
+    // function fun(){
+    //   var a = 10
+    //   a++
+    //   return a
+    // }
+
+    // console.log(fun())
+    // console.log(fun())
+    // console.log(fun())
+
+   /*  GO:{
+      f1:函数体,
+      ff:f2的应用地址
+    } */
+
+    // function f1() {
+    //   /* 
+    //     AO1:{
+    //       parentScope:GO,
+    //       a:13,
+    //       return f2:函数体
+    //     }
+    //   */
+    //   var a = 10
+    //   return function f2() {
+    //     /* 
+    //       AO2：{
+    //         parentScope：AO1,
+    //         使用了ao1里面的某一个树形
+    //       }
+    //     */
+    //     a++
+    //     return a
+    //   }
+    // }
+    // /* 
+    //  a被缓存起来的了  闭包
+
+    //  闭包:
+    //   当一个函数内部嵌套了一个函数，并且内部函数使用了外部函数的变量或者方法这个时候就会产生闭包
+
+    /*  闭包（closure）是一个函数以及其捆绑的周边环境状态（lexical environment，词法环境）的引用的组合。
+     换而言之，闭包让开发者可以从内部函数访问外部函数的作用域。在 JavaScript 中，闭包会随着函数的创建而被同时创建。 */
+     
+    // */
+    // var ff = f1()
+    // ff = null
+    // console.log(ff()) //11
+    // console.log(ff())
+    // console.log(ff()) 
+    /* 
+      闭包的优缺点
+        优点:
+          可以缓存变量
+          变量污染问题
+          外部可以访问内部函数的变量或者方法
+        缺点:内存泄露
+
+        闭包能不用就别用
+    */
+
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>
