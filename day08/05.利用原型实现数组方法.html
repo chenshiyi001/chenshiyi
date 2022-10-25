@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+
+    // console.dir(Array)
+    // var arr = [1,2,3,4]
+    // arr.push(10)
+    // console.log(arr)
+
+
+
+
+    // var arr = new Array()
+
+    // arr[0] = 10
+    // arr[1] = 20
+
+    // arr.push(30)
+
+    // console.log(arr)
+
+    // var arr = [10,20,30]
+
+    //  console.log( arr.max(10,20,30))
+
+
+
+
+    Array.prototype.max = function () {
+      for (var i = 0; i < this.length; i++) {
+        if(isNaN(this[i])) {
+          throw new Error('不是一个合法的数字')
+        }
+      }
+      var maxNumber = -Infinity
+      for (var i = 0; i < this.length; i++) {
+        if (this[i] > maxNumber) {
+          maxNumber = this[i]
+        }
+      }
+      return maxNumber
+    }
+
+
+    // var arr = [210, 20, 30, 101]
+    var arr = ['哈哈', 20, 30, 101]
+
+    var n = arr.max()
+    console.log(n)
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

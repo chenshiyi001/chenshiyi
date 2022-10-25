@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+  
+    // function Fun(){}
+    // var f1 = new Fun()
+
+
+    // Object.prototype.a = 10
+    // Fun.prototype.a = 20
+    // f1.a = 30
+
+    /* 当一个对象在找属性或者方法的时候 会现在自己的本身查找，如果本身找不到了，那么会去原型身上查找，
+       如果说原型上也没有，会去原型的原型上查找，直到找到Object 顶级对象的原型 还没就返回undefined
+       这个过程原型链
+    */
+    // console.log(f1.a)
+
+    // console.dir(Fun)
+    // 原型本身也是一个对象 该对象应该也有自己的原型
+    /* 顶级原型的原型是null */
+    // console.dir(f1.__proto__.__proto__ === Object.prototype)
+    // console.log(Object.prototype )
+    // console.log(f1.__proto__.__proto__.__proto__)
+
+
+    // var n = 10
+    // console.dir(Number)
+    // n.toString()
+
+    // var b = true
+    // b.toString()
+
+    // console.dir(Object)
+
+    // Object.prototype.sayHi = function(){
+    //   console.log("大家好")
+    // }
+
+
+    // var o = {
+    //   name:'张三'
+    // }
+
+    // o.sayHi()
+
+    // var n = 10
+    // n.sayHi()
+
+
+
+
+
+
+  </script>
+
+  
+</body>
+</html>

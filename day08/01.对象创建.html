@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <script>
+    // 字面量创建对象
+    // var o = {
+    //   name:'张三'
+    // }
+
+
+    // 构造函数的形式创建对象
+    // var o = new Object()  顶级对象
+    // o.name = "李四"
+
+    // 希望创建一个人的对象
+    // var p1 = {
+    //   name:'张三',
+    //   age:13,
+    //   gender:'男'
+    // }
+
+    // var p2 = {
+    //   name:'李四',
+    //   age:14,
+    //   gender:'男'
+    // }
+
+    // var p3 = {
+    //   name:'王五',
+    //   age:15,
+    //   gender:'男'
+    // }
+
+
+    /* 全部放在GO里面  造成全局变量污染*/
+    function sayHi(){
+      console.log("大家好,我叫："+this.name)
+    }
+    /* 简化创建对象的功能  封装函数 工厂函数 */
+    function createPerson(name,age,gender){
+      var o = new Object()
+      o.name = name
+      o.age = age
+      o.gender = gender
+      o.sayHi = sayHi
+      // o.sayHi = function(){
+      //   /* 功能代码是很多的 */
+      //   console.log("大家好,我叫："+this.name)
+      // }
+      return o
+    }
+
+    var p1 = createPerson('张三',13,'男')
+    var p2 = createPerson('李四',14,'男')
+    var p3 = createPerson('王五',15,'男')
+
+    /*  不同的对象在调用sayHi方法的时候其实并不是同一个  */
+    console.log(p1.sayHi === p2.sayHi)
+
+
+    // p1.sayHi()
+    // p2.sayHi()
+    // p3.sayHi()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

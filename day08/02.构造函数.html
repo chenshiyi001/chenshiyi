@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <script>
+    /* 
+      当调用函数的时候 函数名() 普通函数
+      当调用函数的时候 new 函数名() 该函数就叫构造函数
+
+      但是如果说我们再写的明确的是构造函数的时候 函数名首字母得大写 (规范)
+
+      构造函数会返回一个对象出来
+    */
+
+    // function Fun(){
+    //   console.log("我是函数")
+    // }
+
+    /* 创建对象的第三种方案 */
+    // var f = new Fun()
+    // f.name = "张三"
+    // f.age = 13
+
+    // console.log(f)
+
+
+    /* 构造函数里面的this 就是该构造函数创建出来的实例对象 */
+    // var a;
+    // function Fun(n1, n2) {
+    //   // console.log(n1,n2)
+    //   console.log('函数')
+    //   a = this
+    // }
+
+    // var f1 = new Fun(10, 20)
+    // var f2 = new Fun(30, 50)
+      // console.log(f === a)
+      // console.log(a === f1)
+      // console.log(a === f2)
+
+
+
+      /* 当你new 了构造函数以后都发生了什么事情 
+        1.它会在内部创建一个对象
+        2.将函数种的this指向该对象
+        3.依次执行里面的代码
+        4.最终会将这个对象返回出去
+      
+      */
+      // function Fun(){
+      //   console.log("执行")
+      // }
+      // var f = new Fun()
+
+
+      /* 全局变量污染 */
+      function sayHi(){
+        console.log("大家好,我叫："+this.name)
+      }
+
+      function CreatePerson(name,age,gender){
+        this.name = name
+        this.age = age
+        this.gender = gender
+        this.sayHi = sayHi
+      }
+
+      var p1 = new CreatePerson('张三',13,'男')
+      var p2 = new CreatePerson('李四',14,'男')
+      console.log(p1,p2)
+
+      console.log(p1.sayHi === p2.sayHi)
+      // p1.sayHi()
+      // p2.sayHi()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>
