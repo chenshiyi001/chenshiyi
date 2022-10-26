@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    /* 
+      递归：
+        函数本身内部调用自己
+        必须有一个结束的条件
+    */
+
+
+    // function fun(n){
+    //   n++
+    //   if(n > 10) return
+    //   console.log("我是fun")
+    //   fun(n)
+    // }
+    // fun(1)
+
+    /* 1-5 */
+    // for(var i = 1; i <= 5; i++){
+    //   console.log(i)
+    // }
+
+
+    // function fun(n) {
+    //   if(n > 5) return
+    //   console.log(n)
+    //   n++
+    //   fun(n)
+
+    // }
+    // fun(1)
+
+    // 计算1-3之间的和
+    // function sum(n){
+    //   if(n <= 0) return 0
+    //   return n + sum(--n)
+    // }
+    // console.log(sum(100))
+
+
+
+    /* 计算一个多为数的每个位数的和 */
+    // function sum(n){
+    //   if(n < 10) return n
+    //   return n % 10 + sum(parseInt(n / 10))
+    // }
+    // console.log(sum(123))
+
+  </script>
+
+</body>
+
+</html>

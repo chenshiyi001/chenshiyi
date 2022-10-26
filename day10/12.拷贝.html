@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script src="./lodash.js"></script>
+  <script>
+    /* 拷贝就是将原本的对象一摸一样的复制一份 
+        1.浅拷贝
+
+        2.深拷贝
+    */
+
+
+    var o = {
+      name:'张三',
+      age:13,
+      address:{
+        city:'深圳',
+        arr:[1,2,3,4]
+      },
+      say:function(){},
+    }
+
+   var o1 = _.cloneDeep(o)
+   console.log(o1.address === o.address)
+    
+
+    // 3.深拷贝方案 使用Lodash 
+
+    // console.log(o)
+
+
+
+
+    /* 
+      2.深拷贝,如果对象的属性是引用数据类型 继续往里面拷贝
+    */
+    // function deepClone(obj){
+    //   var newObj= {}
+    //   for(var key in obj){
+    //     if(typeof obj[key] === "object"){
+    //       // 对象
+    //       newObj[key] = deepClone(obj[key])
+    //     }else{
+    //       // 基本数据类型
+    //       newObj[key] = obj[key]
+    //     }
+    //   }
+    //   return newObj
+    // }
+    // var o1 = deepClone(o)
+    // console.log(o1)
+
+
+
+    
+
+
+
+
+
+    //函数会消失
+    // var j = JSON.stringify(o)
+    // var newObj = JSON.parse(j)
+
+    // console.log(newObj)
+
+
+
+    // newObj.address.city = '广州'
+    // console.log(o)
+    // console.log(newObj)
+    // console.log(newObj.address === o.address)
+
+
+
+
+
+
+
+
+
+
+    // 浅拷贝
+    // 1.第一种方案
+    // var o1 = {}
+    // for(var key in o){
+    //   o1[key] = o[key]
+    // }
+    // o1.address.city = "广州"
+    // console.log(o)
+    // console.log(o1)
+
+    
+    // 第二种方案
+    // var o1 = {}
+    // Object.assign(o1,o)
+    // console.log(o1.address === o.address)
+
+
+    // 第三种方案
+    // var o1 = {
+    //   ...o
+    // }
+    // console.log(o1.address === o.address)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+</body>
+</html>

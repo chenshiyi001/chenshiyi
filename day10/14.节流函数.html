@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>x=0,y=0</h1>
+
+  <script src="./lodash.js"></script>
+  <script>
+
+
+    /* 方案一 */
+    // function throttle(fn,time){
+    //   var flag = false
+    //   return function(){
+    //     if(flag) return
+    //     flag = true
+    //     setTimeout(function(){
+    //       fn()  //2000
+    //       flag = false
+    //     },time)
+    //   }
+    // }
+
+    // /* 方案二 */
+    // function throttle(fn,time){
+    //   var oldTime = Date.now()
+    //   return function(e){
+    //     var newTime = Date.now()
+    //     if(newTime - oldTime >= time){
+    //       fn.call(this,e)
+    //       oldTime = newTime
+    //     }
+    //   }
+    // }
+
+    var h1 = document.querySelector("h1")
+    window.onmousemove = _.throttle(function (e) {
+      console.log("执行代码")
+      h1.innerHTML = "x=" + e.pageX + ",y=" + e.pageY
+    },1000,{
+      leading:false
+    })
+
+
+  //  第一次和第二次之间
+
+
+
+  </script>
+
+</body>
+
+</html>

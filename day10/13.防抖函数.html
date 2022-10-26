@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 5000px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1></h1>
+
+  搜索：<input type="text">
+
+  <script src="./lodash.js"></script>
+  <script>
+
+    // lodash版
+    var input = document.querySelector("input")
+    input.oninput = _.debounce(function(){
+      console.log(this.value)
+    },2000,{leading:true})
+
+
+    /* 
+      在指定的时间内不触发该函数  等到时间到达以后在执行该函数
+    */
+
+  //  function debounce(fn,time){
+  //   var timeId = null
+  //    return function(e){
+  //     if(timeId){
+  //       clearTimeout(timeId)
+  //     }
+  //     var that = this
+  //     timeId = setTimeout(function(){
+  //       fn.call(that,e)
+  //     },time)
+  //    }
+  //  }
+
+
+  //  document.body.onscroll = debounce(function(){
+  //   console.log("我是onscroll")
+  //  },200)
+
+
+
+    // var input = document.querySelector("input")
+    // input.oninput = debounce(function (e) {
+    //   console.log("发送请求",this.value,e)
+    // },300)
+    
+    // var h1 = document.querySelector("h1")
+
+    // window.onmousemove = debounce(function(e){
+    //   console.log("123",e.pageX,e.pageY)
+    //   h1.innerHTML = "x="+e.pageX+",y="+e.pageY
+    // },200)
+
+
+
+
+
+
+
+   
+ 
+
+  </script>
+
+</body>
+
+</html>

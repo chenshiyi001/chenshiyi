@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" />
+  <p></p>
+
+  <script>
+
+
+
+    function watchData(){
+      input.value = data.msg
+      pDom.innerHTML = data.msg
+    }
+    var data = {
+      msg:'默认的数据'
+    }
+    var _data = {
+     
+    }
+    for(var key in data){
+      _data[key] = data[key]
+    }
+
+    Object.defineProperty(data,'msg',{
+      get:function(){
+        return _data.msg
+      },
+      set:function(newValue){
+        // console.log("数据被修改了 我监听到了",newValue)
+        _data.msg = newValue
+        watchData()
+      }
+    })
+    var input = document.querySelector("input")
+    var pDom = document.querySelector("p")
+    watchData()
+
+    input.oninput = function(){
+      data.msg = this.value
+    }
+
+
+  
+
+
+
+
+  </script>
+
+</body>
+
+</html>

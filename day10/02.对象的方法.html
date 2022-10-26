@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    var obj = {
+      name:'张三',
+      age:13,
+      gender:'男'
+    } 
+
+    /* vue2响应式原理中的一个重要角色 */
+    Object.defineProperty(obj,'address',{
+      // 使用该属性的时候执行get
+      get:function(){
+        return '哈哈'
+      },
+      // 更改该属性时候执行 set
+      set:function(newValue){
+        console.log('set',newValue)
+      },
+      // value:'深圳'
+      // // 是否允许枚举
+      // enumerable:true,
+      // // 是否可以删除该属性
+      // configurable:false,
+      // // 是否可以更改该属性
+      // writable:true
+    })
+
+
+
+    // obj.address = "哈哈"
+    // obj.address+1
+    // console.log(obj.address)
+
+    // obj.address = "广州"
+    // console.log(obj)
+
+
+    // for(var key in obj){
+    //   console.log(key)
+    // }
+
+
+    // delete obj.address
+
+    // console.log(obj)
+
+
+
+    // Object.prototype.a = 10
+
+    // console.log(obj.a)
+
+    // 判断对象中是否有指定的属性 只判断自己本身的属性 不会去原型链找
+    // console.log(obj.hasOwnProperty('a'))
+
+    // 判断对象中是否有指定的属性  判断是会沿着原型链查找
+    // console.log('a' in obj)
+
+
+
+    // var obj2 = {
+    //   address:'深圳',
+    //   name:'李四'
+    // }
+
+    /* 可以合并一个或者多个对象 */
+    // var o1 = Object.assign(obj,obj2,{likes:['打篮球']})
+    // console.log(obj)
+
+
+    // 将对象中的key和value生成二维数组
+    // console.log(Object.entries(obj))  [['name','张三'],['age',13],['gender','男']]
+
+    // 冻结对象
+    // Object.freeze(obj)
+    // delete obj.name
+    // obj.name = "李四"
+    // console.log(obj)
+
+    // 将对象中的属性值提取成一个数组
+    // console.log(Object.values(obj))
+
+    // 将对象中的属性提取成一个数组
+    // console.log(Object.keys(obj))
+
+
+    // 删除对象中的属性
+    // delete obj.name
+    // console.log(obj)
+
+
+
+
+  </script>
+
+  
+</body>
+</html>

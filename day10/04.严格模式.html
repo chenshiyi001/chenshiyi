@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 全局严格模式
+    // "use strict"
+    /* js弱语言 可以严格要求代码的内容*/
+
+
+
+  
+
+    if(true){
+      function fun(){
+        console.log("123")
+      }
+    }
+    fun()
+
+    function fun(){
+      // 该函数使用严格模式
+      "use strict"
+      // var arguments = '哈哈'
+      a = 10
+      console.log(arguments)
+    }
+    fun()
+    // fun()
+    console.log(a)
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
