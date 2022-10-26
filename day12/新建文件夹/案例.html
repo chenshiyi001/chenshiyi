@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 800px;
+            height: 500px;
+            background-color: #bbb;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <!-- <script src="./box1.js"></script> -->
+    <script src="./class.js"></script>
+    <script>
+
+        //shape可选参数为：circular，默认为square
+        //Click和remove不能同时使用
+        // var bx = new Box1(".box1", {
+        //     width: 30,
+        //     height: 30,
+        //     color: "greenyellow",
+        //     count: 20,
+        //     isRandom: true,
+        //     shape: "circular",
+        //     isautoplay: {
+        //         delay: 2000
+        //     }
+        // })
+        // bx.autoplay(2000)
+        // bx.Click("yellow")
+        // bx.remove()
+
+        //shape可选参数为：circular，默认为square
+        //Click和remove不能同时使用
+        const bx = new Box(".box", {
+            width: 30,
+            height: 30,
+            backgroundcolor: "greenyellow",
+            count: 20,
+            isRandom: true,
+            isautoplay: {
+                delay: 2000
+            },
+            // shape: "circular",
+        })
+        bx.click("red")
+        
+    </script>
+</body>
+
+</html>

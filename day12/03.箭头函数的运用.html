@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <button>按钮</button>
+  <script>
+    // const btn = document.querySelector("button")
+    // btn.onclick = function(){
+    //   setTimeout(() => {
+    //     this.style.backgroundColor = "red"
+    //   },200)
+    // }
+
+
+    const arr = [
+      {name:'iphone3',price:3000,count:3},
+      {name:'iphone5',price:5000,count:2},
+      {name:'iphone4',price:6000,count:3},
+      {name:'iphone6',price:8000,count:1},
+    ]
+
+    var total = arr.reduce((p,c) => {
+      return p + c.price * c.count
+    },0)
+    console.log(total)
+    // const total = arr.filter(item => item.price > 3000).reduce((p,c) =>  p + c.price * c.count,0)
+    // console.log(total)
+
+
+
+
+    // const arr = [1,2,3]
+
+    // const res = arr.reduce((preValue,currentItem) => {
+    //   console.log(preValue,currentItem)
+    //   return preValue + currentItem
+    // },0)
+    // console.log(res)
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+</body>
+</html>

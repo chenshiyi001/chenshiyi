@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 二维数组
+    const arr = [1, 2, ['张三', '李四', ['王五', '赵六']]]
+
+    console.log(arr.flat(0))
+
+
+
+    /* 封装一个函数  降为 flat */
+    // function flat(arr) {
+    //   return arr.reduce((p,c) => {
+    //     return p.concat(Array.isArray(c) ? flat(c) : c)
+    //   },[])
+    // }
+    // console.log(flat(arr))
+    // p.concat(Array.isArray(c) ? flat(c) : c)
+
+
+
+
+
+    // const newArr = []
+    // arr.forEach(item => {
+    //   if(!Array.isArray(item)){
+    //     newArr.push(item)
+    //   }else{
+    //     item.forEach(citem => {
+    //       newArr.push(citem)
+    //     })
+    //   }
+    // })
+    // console.log(newArr)
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

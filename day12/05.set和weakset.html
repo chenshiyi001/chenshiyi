@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // const o = {
+    //   name:'赵六',
+    //   age:16
+    // }
+    // // const arr = [1,2,3,4,5,1,2,4]
+    /* 
+      Set 对象允许你存储任何类型的唯一值，无论是原始值或者是对象引用
+    */
+    // const s = new Set()
+    // // 添加数据
+    // s.add("张三")
+    // s.add("李四")
+    // s.add("王五")
+    // s.add("张三")
+    // s.add( {
+    //   name:'赵六',
+    //   age:16
+    // })
+    // s.add( {
+    //   name:'赵六',
+    //   age:16
+    // })
+
+    // 删除数据
+    // s.delete("张三")
+
+    // // 判断是否有某个数据
+    // // console.log(s.has("李四"))
+
+    // // 判断集合的大小
+    // // console.log(s.size)
+    // s.clear()
+    //  console.log( Array.from(s)[1] )
+    // s.delete(o)
+
+
+    // console.log(s)
+    // console.log(typeof s)
+
+
+    /* 数组去重 */
+
+    // const arr = [1, 2, 3, 2, 2, 1, 1, 1]
+
+    // const s = new Set(arr)
+    // console.log(Array.from(s))
+
+
+
+
+    /* 只能存储引用数据类型的唯一值 */
+    const ws = new WeakSet([{
+      name:'张三'
+    }])
+    console.log(ws)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

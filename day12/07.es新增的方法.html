@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+     /* 正无穷 */
+    // const n = Infinity
+    /* 
+      isFinite：判断是否是无穷  如果是无穷 false 不是无穷返回是true
+    */
+    // console.log(isFinite(n))
+    // console.log(typeof n)
+
+
+    // const n = 123
+    /* 判断是否是一个整数 是返回true不是返回false */
+    // console.log(Number.isInteger(n))
+
+
+    //isNaN()
+
+
+    /* 判断是否有指定元素 有返回true没有返回false */
+    // const arr = [2,3,4,5]
+    // console.log(arr.includes(9))
+
+
+    // const str = 'abcdo'
+    // console.log(str.includes('o'))
+
+
+
+    // const n = 2
+    // console.log(Math.pow(2,3))
+    // 2的3次方
+    // console.log(2**3)
+    // const str = '1'
+    // console.log(str.padStart(2,0))
+
+    // let query = '?username=张三&age=13&gender=男'
+    // const us = new URLSearchParams(query)
+    // console.log(us.get("age"))
+
+    // 转换成我们能用的对象
+    // console.log(  Object.fromEntries(us))
+
+    /* 
+      ?? 只判断null 和undefined
+    */
+
+    // const a = "" ?? "张三"
+    // console.log(a)
+
+
+    // const a = null ?? "张三"
+    // console.log(a)
+
+
+
+    // function fun(n1){ 
+    //   n1 = n1 ?? 10
+    //   console.log(n1)
+    // }
+    // fun()
+
+
+
+    // localStorage.setItem("data","")
+    // console.log(localStorage.getItem("data"))
+
+    // const str = localStorage.getItem("data") ?? '默认的数据'
+    // console.log(str)
+
+
+    // const o = {
+    //   a:{
+
+    //   }
+    // }
+
+    // if(o.a){
+    //   if(o.a.b){
+    //     if(o.a.b.c){
+    //       console.log(o.a.b.c)
+    //     }
+    //   }
+    // }
+
+    // console.log(o.a.b?.c)
+   
+
+    // function sum(n){
+    //   // n = n || 1
+    //   n ||=  1
+
+    //   console.log(n)
+    // }
+   
+    // sum()
+      // let n = 1
+      // n = n && 10
+      // n &&= 10
+      // console.log(n)
+
+    /* 数字分割符  为让方便阅读*/
+    const n = 100_000_000_000
+    console.log(n)
+  </script>
+  
+</body>
+</html>

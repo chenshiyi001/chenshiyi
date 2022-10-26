@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script> 
+    /* 类 */
+
+    class Parent {
+      constructor(name,age){
+        this.name = name
+        this.age = age
+      }
+      abc(){
+        console.log("我是父亲的方法")
+      }
+    }
+    class Child extends Parent{
+      constructor(name,age,gender){
+        super(name,age)
+        this.gender = gender
+      }
+      // 往原型是上添加东西
+      sayHi(){
+        console.log("大家好")
+      }
+      //静态属性
+      static b = 20
+    }
+    const c = new Child('张三',13,'男')
+    console.dir(c.constructor)
+    c.abc()
+    c.sayHi()
+    console.log(c)
+
+    // function Parent(name,age){
+    //   this.name = name
+    //   this.age = age
+    // }
+    // new Parent()
+    // Parent.b = 20
+
+    // // 加到原型上
+    // Parent.prototype.a = 10
+    // // 私有 属性
+    // Parent.b = 20
+    // const p = new Parent()
+    // console.log(p.a)
+    // console.log(Parent.b)
+
+
+
+    // new URLSearchParams()
+    // const s = new Set()
+    // s.add()
+    
+    // Parent.prototype.abc = function(){
+    //   console.log("我是父亲的abc方法")
+    // }
+
+    // function Fun(name,age){
+    //   Parent.call(this,name,age)
+    //   // this.name = name
+    //   // this.age = age
+    // }
+    // Fun.prototype = new Parent()
+    // Fun.prototype.constructor = Fun
+
+    // Fun.prototype.sayHi = function(){
+    //   console.log("大家好")
+    // }
+    // const f1 = new Fun('zhangsan',13)
+
+    // f1.abc()
+    // f1.sayHi()
+
+    // console.log(f1)
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

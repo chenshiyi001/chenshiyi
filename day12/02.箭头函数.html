@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // function fun(){}
+    // let fun = function(){}
+    // let fun = new Function()
+
+
+    // let fun = (n1,n2) => {
+    //   console.log("我是一个函数",n1,n2)
+    // }
+    // fun(10,20)
+
+    // 箭头只有一个参数的时候可以省略小括号
+    // 箭头函数代码只有一句话的时候可以省略大括  并且默认会返回结果
+    // let fun = n1 => n1 + 100
+    // console.log(fun(10))
+
+
+    // let fun = _ => {
+    //   console.log("我是一个函数")
+    // }
+    // fun()
+
+
+
+    // let fun = () => {
+    //   console.log(this) //window
+    // }
+    // fun()
+
+    // var o = {
+    //   sayHi:() =>  console.log(this)
+      
+    //   }
+
+    //   o.sayHi()
+
+
+
+    /*
+      箭头函数是没有自己的this指向的
+      它在找this的时候会去上一层作用域里面找，上一层是谁它就是谁
+      如果找到全局没有 就是window
+    */
+    // const o = {
+    //   name: '张三',
+    //   sayHi:() => {
+    //     console.log(this) //o  //window
+    //     return () => {
+    //       console.log(this) // o //window
+    //     }
+    //   }
+    // }
+
+    // const ff = o.sayHi()
+    // ff()
+
+
+
+
+    // const o = {
+    //   name:'张三'
+    // }
+    // const o1 = {
+    //   name:'李四',
+    //   sayHi(){
+    //     return () => {
+    //       console.log(this)
+    //     }
+    //   }
+    // }
+
+    // const ff = o1.sayHi.call(o)
+    // ff()
+
+
+
+    /* 箭头函数不能当作构造函数来使用 */
+      // const Fun = () => {
+
+      // }
+      // const ff = new Fun()
+      // console.log(ff)
+
+    /*
+      this指向：
+        函数是普通函数的时候谁调用就是谁
+        构造函数中的this 该构造函数创建出来的实例对象
+        箭头函数没有自己的this指向，上一层作用this是谁就是谁
+    */
+  </script>
+
+</body>
+
+</html>

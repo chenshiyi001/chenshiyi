@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    const o = {
+      name: '张三',
+      age: 13,
+      gender: '男'
+    }
+
+    const po = new Proxy(o, {
+      set(target, property, value) {
+        // console.log('set',target, property, value)
+      },
+      get() {
+        // console.log('get')
+        return '哈哈'
+      },
+      deleteProperty(target,property){
+        if(property !== "name"){
+          delete o[property]
+        }
+      },
+      has(target,prop){
+        console.log("has",target,prop)
+        return prop in o
+      }
+    })
+    console.log(po.name)
+
+
+    console.log("12312312" in po)
+
+    // // delete po.gender
+    // console.log(po)
+    // console.log(o)
+
+
+
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>
