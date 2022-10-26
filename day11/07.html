@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <span></span>
+  <script>
+    var str = '<p>{1}<a href="{2}">{3}</a><p>'
+    var p1 = "京东欢迎你"
+    var p2 = "www.jd.com"
+    var p3 = "JD"
+
+    var span=document.querySelector("span")
+
+    String.prototype.format = function (p, address, name) {
+      var newstr= this.replace(/[1]/,p)
+      var str1 =newstr.replace(/[2]/,address)
+      var str2 =str1.replace(/[3]/,name)
+      var str3=str2.replace(/[{]/g,"")
+      var str4=str3.replace(/[}]/g,"")
+
+
+      console.log(str4)
+
+      return str4
+    }
+
+    var newstr = str.format(p1, p2, p3)
+    console.log(newstr)
+
+    span.innerHTML=newstr
+
+
+
+
+
+  </script>
+</body>
+
+</html>

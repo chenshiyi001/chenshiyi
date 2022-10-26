@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    /* js:单线程
+          代码阻塞的问题
+    */
+
+    // btn.onclick = function(){
+
+    // }
+    // console.log(1)
+    // setTimeout(function () {
+    //   console.log(2)
+    // },0)
+    // console.log(3)
+
+    // 将内容放到这个微任务
+    // queueMicrotask(function(){
+    //   console.log(1)
+    // })
+    // console.log(2)
+    // setTimeout(function(){
+    //   console.log("定时器")
+    // })
+    // queueMicrotask(function(){
+    //   console.log("微任务")
+    // })
+
+    // 宏：1 3
+    // 微：
+
+    // 微1  微2 宏2 微3 宏1 宏3
+    // queueMicrotask(function () {
+    //   console.log("微任务1")
+    //   setTimeout(function () {
+    //     console.log("宏任1")
+    //   })
+    //   queueMicrotask(function () {
+    //     console.log("微任务2")
+    //     setTimeout(function () {
+    //       console.log("宏任3")
+    //     })
+    //   })
+    // })
+
+    // setTimeout(function () {
+    //   console.log("宏任2")
+    //   queueMicrotask(function () {
+    //     console.log('微任务3')
+    //   })
+    // })
+
+
+
+  </script>
+</body>
+
+</html>

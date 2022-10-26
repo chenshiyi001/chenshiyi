@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    const o = {
+      name:'张三',
+      age:13,
+      gender:'男',
+      sayHi:function(){
+        console.log(`大家好我叫${this.name}`)
+      }
+    }
+    const name = o.name
+    const age = o.age
+    const sayHi = o.sayHi
+
+    /* 如果key和value一致 可以省略 */
+    const o1 = {
+      name,
+      age,
+      city:'深圳',
+      sayHi,
+      // coding:function(){
+      //   console.log("我是敲代码")
+      // }
+      // 对象属性值是函数的时候 可以省略function和:
+      coding(){
+        console.log("我在敲代码")
+      }
+    }
+    o1.coding()
+    // console.log(o1)
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

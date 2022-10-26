@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  请输入密码：<input type="text"/> <span></span>
+  <script>
+    var input = document.querySelector("input")
+    var span = document.querySelector("span")
+    
+    input.oninput = function(){
+      var level = 0
+      // this.value
+      if(/\d/.test(this.value)){
+        // 当前的密码中有数字
+        level++
+      }
+      if(/[a-zA-Z]/.test(this.value)){
+        // 当前密码有字母
+        level++
+      }
+      if(/\W/.test(this.value)){
+        // 有特殊符号
+        level++
+      }
+
+      if(level === 1){
+        span.innerHTML = "弱"
+      }else if(level === 2){
+        span.innerHTML = "中"
+      }else if(level === 3){
+        span.innerHTML = "强"
+      }
+    }
+  </script>
+
+</body>
+</html>

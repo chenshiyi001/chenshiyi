@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // var str = 'Haha Hehe'
+    // 替换字符串 g表示全局  i表示不区分大小写
+    // str = str.replace(/h/gi,'o')
+    // console.log(str)
+
+    // str = str.replace(/h/gi,function(item,index,str){
+    //   if(index >= 5){
+    //     return 'o'
+    //   }
+    //   return item
+    // })
+    // console.log(str)
+
+
+    // var str = '我的电话号码：13412341234，我的qq是912341234，我的邮箱1234@qq.com'
+    // console.log(str.match(/[A-Z]/g))
+    // console.log(str.match(/[0-9A-z_\.\-]+[@][0-9A-z_\-]+([\.][A-z0-9]+){1,2}$/g))
+
+
+    var str = '<p>{1}<a href="{2}">{3}</a></p>'
+    var p1 = '京东欢迎你'
+    var p2 = 'http://www.jd.com'
+    var p3 = 'JD'
+    String.prototype.format = function(){
+     var argArr = Array.from(arguments)
+      var str = this.toString()
+      var index = 0
+      str = str.replace(/\{\d\}/g,function(item){
+        index++
+        return argArr[index - 1]
+      })
+      return str
+    }
+    var newStr = str.format(p1, p2, p3)
+    console.log(newStr)
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>

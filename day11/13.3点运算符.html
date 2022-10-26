@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<button>ann</button>
+<button>ann</button>
+<button>ann</button>
+<button>ann</button>
+
+  <script>
+  //  const btns = document.getElementsByTagName("button")
+  //  console.log(...btns)
+    // ... 只能展开迭代对象
+
+    // 展开数组
+    // const arr1 = [1,1,1,1]
+    // const arr2 = ['a','b',...arr1,'c','d']
+    // console.log(arr2)
+    // console.log(arr2.concat(arr1))
+
+    // console.log(...arr2)
+
+
+
+    // const o = {
+    //   name:'张三',
+    //   age:13,
+    //   gender:'男'
+    // }
+
+    // 展开对象  ...运算符 和 {...o} 不是同一个东西
+    // const o1 = {
+    //   ...o
+    // }
+
+    // console.log(...o1)
+
+
+      // function fun(){
+      //   console.log(...arguments)
+      // }
+      // fun(1,2,3)
+    
+
+
+
+
+    // const arr = [1,2,34,4]
+    // const o = {
+    //   name:'123'
+    // }
+
+    // console.log(arr)
+    // console.log(o)
+
+
+
+    // function fun(n1,n2,...arr){
+    //   console.log(n1,n2,arr)
+    //   // console.log(Array.isArray(arr))
+    //   // arguments.filter(function(){
+    //   //   console.log("过滤")
+    //   // })
+    // }
+    // fun(1,2,3,4,5)
+
+
+
+
+    // for in 和 for of区别
+    // for of只能循环迭代对象
+
+    // const arr =  ['a','b','c','d']
+    const o = {name:'张三',age:13}
+
+    // for(let key in o){
+    //   console.log(key)
+    // }
+    
+    for(let item of o){
+      console.log(item)
+    }
+    
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>
