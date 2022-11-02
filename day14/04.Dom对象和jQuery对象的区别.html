@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      border: 2px solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script src="./jQuery.js"></script>
+  <script>
+
+    // 操作dom对象
+    const divDom = document.querySelector("div")
+    // divDom.style.backgroundColor = "red"
+    /* 将dom对象转换成Jquery对象 */
+    $(divDom).css("backgroundColor", 'blue')
+
+
+    // jqeury对象和dom对象之间的方法是不能互相使用的
+
+
+    // 操作jQuery
+    // $("div").css("backgroundColor", 'blue')
+    // 要用dom的方法 需要转换成dom元素  $("jquery对象")[0]  $("jquery对象").get(0)
+    // console.log($("div")[0])
+    // console.log($("div").get(0))
+    // $("div").get(0).style.backgroundColor = "red"
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: relative;
+
+    }
+</style>
+
+<body>
+   
+    <button>向右</button>
+    <button>向左</button>
+    <div></div>
+    <script src="./jQuery.js"></script>
+    <script>
+        /* 
+        el:需要执行动画的函数
+        attr:需要动画的属性
+        target:目标位置
+        speed：移动速度
+        callback：动画结束的回调函数
+         */
+       $(function(){
+        $("button").eq(0).click(function(){
+            animate("div","left",1000,20)
+        })
+        $("button").eq(1).click(function(){
+            animate("div","left",0,20)
+        })
+        function animate(el,attr,target,speed,callback) {
+            let $el=$(el)
+            clearInterval($el.get().interId)
+            if (attr === "left" && "right") {
+                var currentValue = $el.offset().left
+            } else if (attr === "top" && "bottom") {
+                 currentValue = $el.offset().top
+            }
+           
+            if (currentValue > target) {
+                speed = -speed
+            }
+
+            $el.get().interId = setInterval(function () {
+                if (attr === "left" && "right") {
+                    var oldValue = $el.offset().left
+                } else if (attr === "top" && "bottom") {
+                     oldValue = $el.offset().top
+                }
+                var newValue = oldValue + speed
+                
+                if (newValue > target && speed > 0 || newValue < target && speed < 0) {
+                       newValue = target
+                }
+            
+                $el.css(attr,newValue)
+              console.log(newValue,target)
+                if (newValue === target) {
+                    clearInterval ($el.get().interId)
+                    callback && callback()
+                }
+             
+
+            }, 20)
+
+        }
+       })
+        
+    </script>
+</body>
+
+</html>

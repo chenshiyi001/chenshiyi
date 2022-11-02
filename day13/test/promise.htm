@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // const p = new Promise((reslove, reject) => {
+        //     const url = "www.jd.com"
+        //     setTimeout(() => {
+        //         reslove(url)
+        //         console.log("我是百度发送的请求",url)
+        //     })
+
+        // })
+        // const p1 = p.then((res) => {
+        //     return new Promise((reslove, reject) => {
+        //         const url = "www.xm.com"
+        //         setTimeout(() => {
+        //             reslove(url)
+        //             console.log("我是jd发送的请求",url)
+        //         })
+        //     })
+        // })
+        // const p2 = p1.then((url) => {
+        //     return new Promise((reslove, reject) => {
+        //         const data = ["渲染所需要的数据"]
+        //         setTimeout(() => {
+        //             reslove(data)
+        //             console.log("我是xm发送的请求",data)
+        //         })
+        //     })
+        // })
+
+        // const p3=p2.then((data)=>{
+        //     console.log("我是渲染所需要的数据",data)
+        // })
+        // setTimeout(()=>{
+        //     console.log(p1,p2,p3)
+        // },200)
+
+        const p = new Promise((reslove, reject) => {
+            setTimeout(() => {
+                var a = 0
+                if (a < 1) {
+                    reject(a)
+                }
+            })
+        })
+        const p1 = p.catch((res) => {
+            console.log(res,"第一次失败")
+            res = 1
+            return new Promise((reslove, reject) => {
+                setTimeout(() => {
+                  if(res<2){
+                    reject(res)
+                  }
+                })
+            })
+        })
+        const p2=p1.catch((res)=>{
+            console.log(res,"第二次失败")
+            res=2
+            return new Promise((reslove,reject)=>{
+                setTimeout(()=>{
+                    if(res<3){
+                        reject(res)
+                    }
+                })
+          })
+    })
+    const p3=p2.catch((res)=>{
+        console.log(res,"第三次失败")
+    })
+    setTimeout(()=>{
+        console.log(p1,p2)
+    },200)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width:200px;
+      height: 200px;
+      background-color: pink;
+      margin: 30px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    jQuery:就是一个js封装的方法文件
+   -->
+
+
+   <button>按钮</button>
+
+   <div></div>
+   <div></div>
+   <div></div>
+
+   <script src="./jQuery.js"></script>
+   <script>
+    $("button").click(function(){
+      $("div").toggle(300)
+    })
+ </script>
+  
+</body>
+</html>

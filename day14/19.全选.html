@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  
+
+
+  <input type="checkbox" id="allCheck"> 全选 
+  <br>
+  <input type="checkbox" class="itemCheck"> java
+  <input type="checkbox" class="itemCheck"> php
+  <input type="checkbox" class="itemCheck"> node
+  <input type="checkbox" class="itemCheck"> python
+  <script src="./jQuery.js"></script>
+  <script>
+
+    $(function(){
+      $("#allCheck").change(function(){
+        $(".itemCheck").prop("checked",$(this).prop("checked"))
+      })
+
+      $(".itemCheck").change(function(){
+        $("#allCheck").prop("checked",$('.itemCheck:checked').length === $('.itemCheck').length)
+      })
+    })
+  </script>
+  
+</body>
+</html>

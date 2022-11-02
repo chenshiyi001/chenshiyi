@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1></h1>
+
+  <script>
+    const h1 = document.querySelector("h1")
+
+    // h1.innerHTML = "红灯"
+    // setTimeout(() => {
+    //   h1.innerHTML = "黄灯"
+    //   setTimeout(() => {
+    //     h1.innerHTML = "绿灯"
+    //   }, 2000);
+    // },3000)
+
+
+    // const show = () => {
+    //   new Promise((reslove) => {
+    //     h1.innerHTML = "红灯"
+    //     setTimeout(() => {
+    //       reslove('黄灯')
+    //     },3000)
+    //   }).then((res) => {
+    //     h1.innerHTML = res
+    //     return new Promise((reslove) => {
+    //       setTimeout(() => {
+    //         reslove("绿灯")
+    //       },2000)
+    //     })
+       
+    //   }).then(res => {
+    //     h1.innerHTML = res
+    //     setTimeout(() => {
+    //       show()
+    //     },1000)
+    //   })
+    // }
+
+    // show()
+
+
+    function ryg(color,time){
+      return new Promise((reslove) => {
+        h1.innerHTML = color
+        setTimeout(() => {
+          reslove(color)
+          console.log("红色结束了")
+        },time)
+      })
+    }
+    async function show(){
+      await ryg("红色",3000)
+      await ryg('黄灯',2000)
+      await ryg('绿灯',1000)
+      await show()
+    }
+
+    show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

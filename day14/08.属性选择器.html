@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <input type="text" name="abc"/>
+  <input type="text" name="cba"/>
+  <input type="text" name="nba"/>
+  <input type="text" name="haha-abc"/>
+  <input type="text" name="xixi-abc"/>
+  <input type="text"/>
+
+  <script src="./jQuery.js"></script>
+  <script>
+    $("input[name!=abc]").css("backgroundColor","red")
+  </script>
+  
+</body>
+</html>

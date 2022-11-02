@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+
+    // 获取成功promise
+    // const p = Promise.resolve('abc')
+    // console.log(p)
+    // p.then(data => {
+    //   console.log(data)
+    // })
+
+    // // 获取一个失败的promise
+    // Promise.reject().catch(err => {
+    //   console.log('catch')
+    // })
+
+
+    /* 发送多个请求 在最短的时间内获取数据 */
+    // let flag1 = false
+    // let flag2 = false
+    // let old = Date.now()
+    // setTimeout(function () {
+    //   console.log("获取到了第一部分的内容")
+    //   flag1 = true
+    //   showPage()
+    // }, 2000)
+
+    // setTimeout(function () {
+    //   console.log("获取到了第二部分的内容")
+    //   flag2 = true
+    //   showPage()
+    // }, 4000)
+
+    // function showPage(){
+    //   if(flag1 && flag2){
+    //     console.log("渲染页面",Date.now() - old)
+    //   }
+    // }
+
+    let oldTime = Date.now()
+    const p1 = new Promise((resolve,reject) => {
+      setTimeout(() => {
+        resolve("第一部分的内容")
+      })
+    }).then(data => {
+      console.log(data,"then")
+    }).catch(err => {
+      console.log(err,"catch")
+    }).finally(() => {
+      console.log("哈哈")
+    })
+
+    // const p2 = new Promise((resolve,reject) => {
+    //   setTimeout(() => {
+    //     resolve("第二部分的内容")
+    //   },4000)
+    // })  
+    // const p3 = new Promise((resolve,reject) => {
+    //   setTimeout(() => {
+    //     reject("第三部分的内容")
+    //   },1000)
+    // })  
+
+
+    /* 
+      Promise.race()
+         可以同时处理多个promise,
+         判断多个promise中最开的哪个状态，不管是成功或者失败直接结束
+    */
+    // Promise.race([p1,p2,p3]).then(value => {
+    //   console.log(value,'then')
+    // }).catch(err => {
+    //   console.log("catch",err)
+    // })
+
+
+    /* Promise.allSettled()
+         可以同时处理多个promise,
+         当所有promise都有结果（不管成功或者失败）以后会走.then方法
+         返回的结果中是一个数组 数组中的每一项 是对应的promise的对象的状态以及结果
+    */
+    // Promise.allSettled([p1,p2,p3]).then(res => {
+    //   console.log(res,Date.now() - oldTime)
+    // })
+
+
+    
+    /* 
+      Promise.all([p1,p2,p3])
+        可以同时处理多个promise,
+        当所有promise成功以后执行.then方法并且结果是一个数组
+        如果其中失败了，整个promise就失败了
+
+    */
+    // Promise.all([p1,p2]).then(values => {
+    //   console.log("then",values,Date.now() - oldTime)
+    // }).catch(err => {
+    //   console.log("promise失败了")
+    // })
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

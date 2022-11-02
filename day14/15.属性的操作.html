@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <input type="text" name="user" data-index="1001" class="xixi">
+
+  <input type="checkbox" />
+
+  <button>test</button>
+  <script src="./jquery-1.12.4.js"></script>
+  <script>
+    $("input").prop("checked", true)
+    $("button").click(function () {
+      // 读取属性
+      //  console.log( $("input").attr("data-index"))
+      // $("input").attr("name",'abc')
+      // $("input").removeAttr("name")
+      //  console.log($("input").prop("name",'abc'))
+
+      // 操作类的 要用类相关的方法
+      // console.log($("input").attr("class",'haha'))
+
+
+      // console.log(  $("input").prop("value","abc") )
+
+
+      /* 如果属性值是boolean类型的 使用prop来操作  如果普通使用attr */
+      // if ($("input").prop("checked")) {
+      //   $("input").prop("checked", false)
+      // } else {
+      //   $("input").prop("checked", true)
+      // }  
+      $("input").removeProp("checked")
+
+
+
+
+
+
+    })
+
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>

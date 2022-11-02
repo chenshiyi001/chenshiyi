@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrap {
+        width: 500px;
+        height: 400px;
+        margin: 0 auto;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        border: 5px solid blue;
+        border-radius: 10px;
+        overflow: hidden;
+
+    }
+
+    .content {
+        width: 2500px;
+        height: 380px;
+        background-color: blue;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+
+    }
+
+    .content img {
+        width: 500px;
+        height: 100%;
+    }
+
+    .wrap .nav {
+        width: 150px;
+        height: 20px;
+        /* background-color: red; */
+        position: absolute;
+        bottom: 220px;
+        left: 600px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    .wrap .nav div {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: aqua;
+        margin-left: 10px;
+    }
+
+    .wrap .nav .active {
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <div class="content">
+            <img src="./img/1.webp" alt="">
+            <img src="./img/2.webp" alt="">
+            <img src="./img/3.webp" alt="">
+            <img src="./img/4.webp" alt="">
+            <img src="./img/5.webp" alt="">
+            <img src="./img/1.webp" alt="">
+        </div>
+        <div class="nav">
+            <div class="active"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+
+    <script src="./jQuery.js"></script>
+    <script>
+        const $content = $(".content")
+
+        const $width = $(".wrap .content img")
+
+        const $nav = $(".wrap .nav div")
+        function move(page) {
+            if (page ===5) {
+                page = 0
+            }
+            $nav.eq(page).addClass("active").siblings().removeClass("active")
+        }
+        const $div=$(".nav div")
+        $div.each(function(index,item){
+            $(item).click(function(){
+                clearInterval(interId)  
+                move($(this).index())
+                autoplay()
+            })
+        })
+        let interId = null
+        let page = 0
+        function autoplay() {
+            clearInterval(interId)
+            interId = setInterval(function () {
+                page++
+                if (page ===5) {
+                    page = 0
+                }
+                $content.animate({ left: -($width.width() * page) }, 500)
+                move(page)
+            }, 1000)
+        }
+        autoplay()
+    </script>
+</body>
+
+</html>

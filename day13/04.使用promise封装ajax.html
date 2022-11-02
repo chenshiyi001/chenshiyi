@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    function ajax(options) {
+      var method = options.method || 'get'
+      var url = options.url
+      var params = options.params || {}
+      var formatParams = ''
+      var callback = options.success
+      // 准备参数
+      for (var key in params) {
+        formatParams += '&' + key + "=" + params[key]
+      }
+      formatParams = formatParams.slice(1)
+      return new Promise((reslove,reject) => {
+        var xhr = new XMLHttpRequest()
+        if (method.toLowerCase() === "get") {
+          xhr.open(method, url + "?" + formatParams)
+          xhr.send(null)
+        } else if (method.toLowerCase() === "post") {
+          xhr.open(method, url)
+          xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+          xhr.send(formatParams)
+        }
+
+        // 接收
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            // callback(JSON.parse(xhr.responseText))
+            reslove(JSON.parse(xhr.responseText))
+          }
+        }
+
+      })
+    
+     
+    }
+
+
+    ajax({
+      url:'http://192.168.88.77:8360/api/v4/product/pagination',
+      method:'get',
+      params: { size: 10, page: 1 },
+    }).then(data => {
+      console.log(data)
+    })
+
+
+
+
+    // new Promise((reslove, reject) => {
+    //   ajax({
+    //     url: 'http://192.168.88.77:8360/api/v4/product/pagination',
+    //     method: 'get',
+    //     params: { size: 10, page: 1 },
+    //     success: function (res) {
+    //       if(res.errcode === 0){
+    //         reslove(res)
+    //       }else{
+    //         reject(res)
+    //       }
+          
+    //     }
+    //   })
+    // }).then(data => {
+    //   console.log(data)
+    // }).catch(err => {
+    //   console.log(err)
+    // })
+
+
+
+
+  </script>
+
+</body>
+
+</html>

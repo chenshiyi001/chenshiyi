@@ -1,0 +1,42 @@
+@import url("reset.css");
+@import url("bootstrap.css");
+@import url("animate.css");
+nav {
+  height: 70px;
+}
+nav .logo {
+  font-size: 30px;
+  color: #3dc7b7 !important;
+}
+nav .logo:hover {
+  color: #298e83 !important;
+}
+#banner {
+  background-color: yellow;
+  background-image: url("../imgs/tq_home_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#banner .bg_mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 90px 0;
+}
+#banner .bg_mask h1,
+#banner .bg_mask p {
+  color: #fff;
+}
+#NJR {
+  padding: 60px 0;
+}
+#NJR .item {
+  padding: 20px 0;
+}
+#NJR .item:hover {
+  background-color: #f1f1f1;
+  box-shadow: 2px 2px 6px rgba(100, 100, 100, 0.6);
+}
+#grunt {
+  padding: 30px 0;
+}

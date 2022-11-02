@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+
+    }
+
+    ul {
+      width: 450px;
+      height: 50px;
+      background-color: yellow;
+      list-style: none;
+      display: flex;
+      margin: 50px auto;
+    }
+
+    li {
+      border: 1px solid;
+      flex: 1;
+      text-align: center;
+      line-height: 50px;
+      list-style: none;
+    }
+
+    ol {
+      background-color: red;
+    }
+
+    ol{
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul>
+    <li>汽车
+      <ol>
+        <li>汽车1</li>
+        <li>汽车2</li>
+        <li>汽车3</li>
+      </ol>
+    </li>
+    <li>水果
+      <ol>
+        <li>水果1</li>
+        <li>水果1</li>
+        <li>水果1</li>
+      </ol>
+    </li>
+    <li>饮料
+      <ol>
+        <li>饮料</li>
+        <li>饮料</li>
+        <li>饮料</li>
+      </ol>
+
+    </li>
+  </ul>
+
+  <script src="./jQuery.js"></script>
+  <script>
+    $("ul>li").on("mouseenter",function(){
+      $(this).children("ol").stop().delay(2000).slideDown()
+    })
+    $("ul>li").on("mouseleave",function(){
+      $(this).children("ol").stop().slideUp()
+    })
+
+  </script>
+
+
+
+</body>
+
+</html>

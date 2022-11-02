@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      border: 2px solid;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="javascript:;">我是个超链接</a>
+  <div>我是个div</div>
+
+  <button>测试</button>
+  <script src="./jQuery.js"></script>
+  <script>
+
+    $("button").click(function () {
+
+      // var a = document.querySelector("a")
+
+      // a.onclick = function(){
+      //   alert("我是a")
+      // }
+      // // 复制 true表示包括内容
+      // var clonea = a.cloneNode(true)
+
+      // document.querySelector("div").appendChild(clonea)
+
+
+
+      // 往选中的元素内部最后面追加一个元素
+      // $("div").append("<strong>我是加粗</strong>")
+      // 剪切粘贴
+      // $("div").append($("a"))
+
+      // 选创建在追加
+      // $("<strong>我是加粗</strong>").appendTo($("div"))
+      // $("a").appendTo($("div"))
+
+      // 往选中的元素内部最前面面追加一个元素 其余自己演示
+      // $("div").prepend("<strong>我是加粗</strong>")
+
+
+      // 在元素外面后面追加
+      // $("div").after("<strong>我是加粗</strong>")
+      // $("div").after($("a"))
+      //  在元素外面前面追加
+      // $("div").before($("a"))
+
+
+
+      // $("<strong>我是加粗</strong>").insertAfter("div")
+
+
+
+
+      // $("a").replaceWith("<p>wo shi duanl</p>")
+
+
+      // $("<p>wo shi duanl</p>").replaceAll("a")
+
+      // 清空内容
+      // $("div").empty()
+      // 删除
+      // $("div").remove()
+
+      // 克隆
+      $("a").click(function(){
+        alert("我是a")
+      })  
+      // 表示连事件页克隆过来
+      const $a = $("a").clone(true)
+      $("div").append($a)
+
+
+
+
+
+
+
+
+    })
+
+
+  </script>
+
+
+
+</body>
+
+</html>

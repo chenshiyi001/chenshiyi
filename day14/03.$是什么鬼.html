@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <script src="./jQuery.js"></script>
+  <script>
+    console.log($)
+
+    /* 
+      $:是一个函数
+    */
+
+    /* 
+      1.当作入口函数来使用 类似与window.onload
+        不会等图片加载完成才执行
+    */
+    // $(function(){
+    //   console.log("入口函数")
+    // })
+    /* 会等到图片加载完成以后才执行 */
+    // window.onload = function(){ }
+
+    /* 
+      2.获取jQuery对象
+    */
+    // const $btns = $("button")
+    // console.log($btns)
+
+
+    /* 3.可以创建一个jQuery对象 */
+    // const a = $("<a href=''>超链接</a>")
+
+    /* 4.可以将dom对象转换成jQuery对象 */
+    // var btn = document.querySelector("button")
+    // const b = $(btn)
+    // console.log(b)
+
+
+
+
+
+
+
+    
+
+
+
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <label>
+    全选<input type="checkbox" class="allChecked" />
+  </label>
+
+  <ul>
+    <!-- <li>
+      <label><input type="checkbox"/> iphone</label>
+    </li> -->
+  </ul>
+
+  <label>
+    全选<input type="checkbox" class="allChecked" />
+  </label>
+
+
+  <script src="./jQuery.js"></script>
+  <script>
+    const list = [
+      { product: 'iphone1', isChecked: 1 },
+      { product: 'iphone2', isChecked: 1 },
+      { product: 'iphone3', isChecked: 1 },
+    ]
+
+
+    function allIsChecked(){
+      $(".allChecked").prop('checked',list.every(item => !!item.isChecked ))
+    }
+    allIsChecked()
+
+    function showPage() {
+      $("ul").empty()
+      list.forEach(item => {
+        $(`<li><label><input type="checkbox" class="itemCheck"/> ${item.product}</label></li>`)
+          .appendTo("ul")
+          .find("input")
+          .prop("checked", !!item.isChecked)
+      })
+
+      $(".itemCheck").change(function () {
+        const index = $(this).parent().parent().index()
+        list[index].isChecked = +$(this).prop("checked")
+        allIsChecked()
+      })
+
+    }
+
+    showPage()
+
+    $(".allChecked").change(function () {
+      console.log($(this).prop("checked"))
+      list.forEach(item => {
+        item.isChecked = +$(this).prop("checked")
+      })
+      showPage()
+
+      $(".allChecked").prop('checked', $(this).prop("checked"))
+    })
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+</body>
+
+</html>

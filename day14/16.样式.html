@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: yellow;
+      /* border: 10px solid;
+      padding: 10px;
+      margin: 10px; */
+      position: relative;
+      overflow: auto;
+    }
+
+    .box1 {
+      width: 200px;
+      height: 800px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="box1"></div>
+  </div>
+
+
+  <button>按钮</button>
+
+
+
+
+  <script src="./jQuery.js"></script>
+  <script>
+
+    $(".box").on("scroll",function(){
+      console.log($(this).scrollTop())
+      console.log($(this).height())
+      console.log(this.scrollHeight)
+    
+    })
+    $("button").click(function(){
+      $(".box").scrollTop(0)
+    })
+
+    
+
+
+  //  离浏览器窗口的距离 l t
+  // console.log( $(".box1").offset())
+  // 离最近开启定位父元素的距离
+  // console.log( $(".box1").position())
+
+    // 读取样式
+    //  console.log( $("div").css("width"))
+    // 设置样式
+    // $("div").css("width","500px")
+    // $("div").css({
+    //   width:500,
+    //   height:500,
+    // })
+
+
+    //  console.log( $("div").width())
+    //  console.log( $("div").width(700))
+    //  console.log( $("div").height())
+    //  console.log( $("div").height(700))
+    // console.log($("div").width())
+    // //  width + padding
+    // console.log($("div").innerWidth())
+
+
+    // // width + padding + border
+    // console.log($("div").outerWidth())
+    // // width + padding + border+margin
+    // console.log($("div").outerWidth(true))
+  </script>
+
+</body>
+
+</html>

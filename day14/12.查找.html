@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 500px;
+      height: 500px;
+      background-color: red;
+      /* position: relative; */
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- <div class="box1">
+    <div class="box2">
+      <div class="box3">
+        <div class="box4"></div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <ul>
+    <li>123</li>
+    <li>123</li>
+    <li class="three">123</li>
+    <li>123</li>
+    <li>123</li>
+    <p class="haha">我是段落<span>wo shi span</span></p>
+    <div>我是div</div>
+  </ul> -->
+
+
+
+
+  <div>
+    <p>First Paragraph</p>
+    <p>Second Paragraph</p>
+  </div>
+
+
+
+  <script src="./jQuery.js"></script>
+  <script>
+
+    // $(".three").add("p").css("backgroundColor","red")
+
+
+    // console.log($("ul").children('.haha').children())
+
+  //  console.log( $("li:first").closest("ul"))
+  // console.log($(".aaa").closest("li")[0])
+
+  // console.log($("ul").find("a"))
+  // console.log($("ul").children("a"))
+
+  // $(".two").next(".abc").css("backgroundColor","red")
+  // $('#term-2').nextUntil('dt').css('background-color', 'red');
+  // console.log($(".box4").parentsUntil(".box1"))
+  // $(".three").siblings("li").css('background-color', 'red');
+
+
+  $("div").find("p").addBack().addClass("border");
+
+
+
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>

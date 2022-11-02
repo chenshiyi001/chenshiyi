@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <button>按钮</button>
+  <div>文字</div>
+  <script src="./jQuery.js"></script>
+  <script src="./jquery.color.js"></script>
+  <script>
+    $("button").click(function(){
+      // 默认只支持数字相关的动画
+      $("div").animate({width:500,height:500},500,"linear")
+      .animate({width:200,height:200},500,"linear")
+      .animate({left:600,top:300,fontSize:50,backgroundColor:'red',color:"#fff"},2000,"linear")
+    })
+  </script>
+
+  
+</body>
+</html>

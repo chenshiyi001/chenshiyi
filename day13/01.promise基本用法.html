@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <script>
+    /* 
+      Promise:
+        处理异步的一种解决方案
+        有三种状态 
+          pending：等待的状态
+          fulfilled：成功的状态
+          rejected：失败状态
+    */
+
+
+
+    /* 
+      Promise函数需要有个参数是一个函数
+        该函数里面又有两个参数 分别是reslove reject (函数)
+        调用reslove 函数  Promise会从 pending -> fulfilled
+        调用reject 函数  Promise会从 pending -> rejected
+    */
+   /* 用法1 */
+    // const p = new Promise((reslove,reject) => {
+    //   // reslove({n1:10,n2:20})
+    //   // console.log("Promise",reslove,reject)
+    //   reject({n1:10,n2:20})
+    // })
+    // /* 
+    //   .then方法需要有个参数,参数是一个函数 该函数需要等待promise变成成功状态以后才会执行
+    // */
+    // p.then(({n1,n2}) => {
+    //   console.log("then",n1,n2)
+    // })
+
+    // /* 
+    //   .catch方法需要有个参数,参数是一个函数 该函数需要等待promise变成失败状态以后才会执行
+    // */
+    // p.catch(({n1,n2}) => {
+    //   console.log("catch",n1,n2)
+    // })
+
+
+
+    // 用法二
+    // new Promise((reslove,reject) => {
+    //   // reslove({n1:10,n2:20})
+    //   reject({n1:10,n2:20})
+    // }).then(({n1,n2}) => {
+    //   console.log(n1,n2,"then")
+    // }).catch(({n1,n2}) => {
+    //   console.log(n1,n2,"catch")
+    // })
+
+
+    /* 用法三 */
+    // new Promise((reslove,reject) => {
+    //   reject()
+    // }).then(() => {
+    //   console.log("then1")
+    // },() => {
+    //   console.log("then2")
+    // })
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // {status:0,msg:'',data:{url:'jd'}}
+
+    /* 
+      url:www.baidu.com  jd
+      url:www.jd.com    xm
+      url:www.xm.com    衣服的数组
+    */
+
+    /* 地狱回调 */
+    // ajax({
+    //   url:'www.baidu.com',
+    //   success: function({status,data:{url}}) {
+    //       if(status !== 0) return
+    //       url = `www.${url}.com`
+    //       url = `www.${url}.com`
+    //       url = `www.${url}.com`
+    //       url = `www.${url}.com`
+    //       url = `www.${url}.com`
+    //       url = `www.${url}.com`
+    //       ajax({
+    //         url,
+    //         success:function(){
+    //           // 又要去处理数据...
+    //           // 又要去处理数据...
+    //           // 又要去处理数据...
+    //           // 又要去处理数据...
+    //           // 又要去处理数据...
+    //           // 又要去处理数据...
+    //           ajax({
+    //             url:'',
+    //             success:function(data){
+    //               console.log("页面渲染")
+    //               console.log("页面渲染")
+    //               console.log("页面渲染")
+    //               console.log("页面渲染")
+    //               console.log("页面渲染")
+    //               console.log("页面渲染")
+    //               console.log("页面渲染")
+    //             }
+    //           })
+    //         }
+    //       })
+    //   }
+    // })
+
+    // setTimeout(() => {
+
+    // })
+
+    // ajax({
+    //   url:'',
+    //   success: function() {
+    //     /* 处理数据 */
+    //     // 写100行代码
+    //   }
+    // })
+
+    /* 
+      url:www.baidu.com  jd
+      url:www.jd.com    xm
+      url:www.xm.com    衣服的数组
+    */
+
+    // baidu请求
+    // setTimeout(() => {
+    //   console.log("得到了jd的地址")
+    //   // jd的请求
+    //   setTimeout(() => {
+    //     console.log("得到了xm的地址")
+    //     // xm的请求
+    //     setTimeout(() => {
+    //       console.log("得到了衣服的数组")
+    //     })
+    //   })
+    // })
+
+
+
+    const p = new Promise((reslove, reject) => {
+      // 发送baidu的请求
+      setTimeout(() => {
+        reslove('jd')
+      })
+    })
+    /* p1是一个新的promise 这个promise的状态由你then函数中返回的结果来做决定 */
+    const p1 = p.then((res) => {
+      // const url = `www.${url}.com`
+      console.log("处理jd的地址")
+      return new Promise((reslove, reject) => {
+        // 发送jd请求
+        setTimeout(() => {
+          reslove('xm')
+        })
+      })
+    })
+    const p2 = p1.then((res) => {
+      console.log("处理xm的地址")
+      return new Promise((reslove) => {
+        // xm的请求
+        setTimeout(() => {
+          reslove(['衣服的数组'])
+        })
+      })
+    })
+    p2.then(res => {
+      console.log(res,'渲染页面')
+    })
+  </script>
+
+</body>
+
+</html>

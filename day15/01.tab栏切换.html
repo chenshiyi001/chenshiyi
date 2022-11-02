@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    nav {
+      width: 600px;
+      height: 50px;
+      background-color: pink;
+      display: flex;
+    }
+
+    nav div {
+      flex: 1;
+      text-align: center;
+      line-height: 50px;
+    }
+    main{
+      width: 600px;
+      height: 400px;
+      background-color: greenyellow;
+    }
+    main div{
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 400px;
+      font-size: 30px;
+      font-weight: bold;
+      display: none;
+    }
+    .active{
+      display: block;
+    }
+    .navActive{
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="navActive">新闻</div>
+    <div>娱乐</div>
+    <div>体育</div>
+    <div>疫情</div>
+  </nav>
+
+  <main>
+    <div class="active">新闻模块</div>
+    <div>娱乐模块</div>
+    <div>体育模块</div>
+    <div>疫情模块</div>
+  </main>
+  <script src="./jQuery.js"></script>
+  <script>
+    $("nav div").click(function(){
+      $(this).addClass("navActive").siblings().removeClass('navActive')
+      // 当前点击的下标是多少
+      const index = $(this).index()
+      $("main div").eq(index).show().siblings().hide()
+    })
+
+  </script>
+
+</body>
+
+</html>

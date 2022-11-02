@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /*先找li 然后查早它的父元素 然在判断第一个是否时li */
+    /* li:first-child{
+      background-color: blue;
+    } */
+    /*先找li 然后查早它的父元素 然在直接找父元素里面第一个li */
+    /* li:first-of-type{
+      background-color: red;
+    } */
+
+
+    /* li:nth-child(3){
+      background-color: red;
+    } */
+
+    li:nth-of-type(3){
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+
+
+  <ul>
+    <p>我是段落</p>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <script src="./jQuery.js"></script>
+  <script>
+    // $("li:first-child").css("backgroundColor","red")
+    // $("li:last-child").css("backgroundColor","red")
+  </script>
+  
+</body>
+</html>
